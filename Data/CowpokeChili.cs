@@ -1,4 +1,5 @@
-﻿using System;
+﻿//assumed Nathan Bean (approved by Grant Clothier 1.29.2020)
+using System;
 using System.Collections.Generic;
 
 namespace CowboyCafe.Data

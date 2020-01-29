@@ -21,6 +21,7 @@ namespace CowboyCafe.Data
             get { return bread; }
             set { bread = value; }
         }
+        //public bool Bread {get; set;} = true;
 
         private bool pickle = true;
         /// <summary>
