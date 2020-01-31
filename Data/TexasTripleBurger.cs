@@ -135,7 +135,7 @@ namespace CowboyCafe.Data
         }
 
         /// <summary>
-        /// Special instructions for the Dakota Double Burger
+        /// Special instructions for the Texas Triple Burger
         /// </summary>
         public List<string> SpecialInstructions
         {
@@ -146,11 +146,11 @@ namespace CowboyCafe.Data
                 if (!bun) instructions.Add("hold bun");
                 if (!ketchup) instructions.Add("hold ketchup");
                 if (!mustard) instructions.Add("hold mustard");
+                if (!pickle) instructions.Add("hold pickle");
+                if (!cheese) instructions.Add("hold cheese");
                 if (!tomato) instructions.Add("hold tomato");
                 if (!lettuce) instructions.Add("hold lettuce");
                 if (!mayo) instructions.Add("hold mayo");
-                if (!pickle) instructions.Add("hold pickle");
-                if (!cheese) instructions.Add("hold cheese");
                 if (!bacon) instructions.Add("hold bacon");
                 if (!egg) instructions.Add("hold egg");
 
