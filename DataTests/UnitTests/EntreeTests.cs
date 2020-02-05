@@ -12,8 +12,7 @@ namespace CowboyCafe.DataTests
         [InlineData(typeof(CowpokeChili))]
         [InlineData(typeof(RustlersRibs))]
         [InlineData(typeof(PecosPulledPork))]
-        [InlineData(typeof(Trailburger))]//I changed the case on this test to match my classname
-        //I think it is ok to do this because the case conficts with the firs round of tests released. 
+        [InlineData(typeof(TrailBurger))] 
         [InlineData(typeof(DakotaDoubleBurger))]
         [InlineData(typeof(TexasTripleBurger))]
         [InlineData(typeof(AngryChicken))]
