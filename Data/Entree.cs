@@ -1,5 +1,9 @@
-﻿//Grant Clothier
-//2.04.2020
+﻿/* 
+ * Author: Grant Clothier
+ * Class: Entree.cs
+ * Purpose: abstract base class for the entrees
+ * 2.04.2020
+ */
 using System;
 using System.Collections.Generic;
 using System.Text;

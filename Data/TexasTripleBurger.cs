@@ -1,6 +1,10 @@
-﻿//Grant Clothier
-//1.29.2020
-//a 3/4lb triple burger
+﻿/* 
+ * Author: Grant Clothier
+ * Class: TexasTripleBurger.cs
+ * Purpose: Information about the menu Texas Triple Burger
+ * extra: a 3/4lb triple burger
+ * 1.29.2020
+ */
 using System;
 using System.Collections.Generic;
 using System.Text;

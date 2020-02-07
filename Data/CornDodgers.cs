@@ -1,5 +1,9 @@
-﻿//Grant Clothier
-//2.04.2020
+﻿/* 
+ * Author: Grant Clothier
+ * Class: CornDodgers.cs
+ * Purpose: Information about the menu item Corn Dodgers
+ * 2.04.2020
+ */
 using System;
 using System.Collections.Generic;
 using System.Text;

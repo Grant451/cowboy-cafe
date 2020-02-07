@@ -1,5 +1,9 @@
-﻿//Grant Clothier
-//2.03.3030
+﻿/* 
+ * Author: Grant Clothier
+ * Class: ChiliCheeseFries.cs
+ * Purpose: Information about the menu item Chili Cheese Fries
+ * 2.03.2020
+ */
 using System;
 using System.Collections.Generic;
 using System.Text;

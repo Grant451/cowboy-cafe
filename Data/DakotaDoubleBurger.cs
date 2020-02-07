@@ -1,6 +1,10 @@
-﻿//Grant Clothier
-//1.29.2020
-//a 1/2lb double burger
+﻿/* 
+ * Author: Grant Clothier
+ * Class: DakotaDoubleBurger.cs
+ * Purpose: Information about the menu item Dakota Double Burger
+ * extra: a 1/2lb double burger
+ * 1.29.2020
+ */
 using System;
 using System.Collections.Generic;
 using System.Text;

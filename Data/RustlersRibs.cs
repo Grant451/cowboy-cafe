@@ -1,5 +1,9 @@
-﻿//Grant Clothier
-//1.28.2020
+﻿/* 
+ * Author: Grant Clothier
+ * Class: RustlersRibs.cs
+ * Purpose: Information about the menu item Rustlers Ribs
+ * 1.28.2020
+ */
 using System;
 using System.Collections.Generic;
 using System.Text;

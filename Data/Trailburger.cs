@@ -1,6 +1,10 @@
-﻿//Grant Clothier
-//1.29.2020
-//a 1/4lb burger
+﻿/* 
+ * Author: Grant Clothier
+ * Class: Trailburger.cs
+ * Purpose: Information about the menu item Trailburger
+ * extra: a 1/4lb burger
+ * 1.29.2020
+ */
 using System;
 using System.Collections.Generic;
 using System.Text;

@@ -1,5 +1,9 @@
-﻿// Grant Clothier
-//2.04.2020
+﻿/* 
+ * Author: Grant Clothier
+ * Class: BakedBeans.cs
+ * Purpose: Information about the menu item Baked beans
+ * 2.04.2020
+ */
 using System;
 using System.Collections.Generic;
 using System.Text;

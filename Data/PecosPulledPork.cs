@@ -1,6 +1,10 @@
-﻿//Grant Clothier
-//1.29.2020
-//BBQ pulled pork sandwich
+﻿/* 
+ * Author: Grant Clothier
+ * Class: PecosPulledPork.cs
+ * Purpose: Information about the menu item Pecos Pulled Pork
+ * extra: BBQ pulled pork sandwich
+ * 1.29.2020
+ */
 using System;
 using System.Collections.Generic;
 using System.Text;
