@@ -22,16 +22,7 @@ namespace CowboyCafe.Data
             get { return flavor; }
             set { flavor = value; }
         }
-
-        private bool ice = true;
-        /// <summary>
-        /// if the soda has ice
-        /// </summary>
-        public new bool Ice
-        {
-            get { return ice; }
-            set { ice = value; }
-        }
+        
 
         /// <summary>
         /// the price for the jerked soda

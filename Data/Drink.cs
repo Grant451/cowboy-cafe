@@ -25,12 +25,13 @@ namespace CowboyCafe.Data
         /// <summary>
         /// gets the calories of the drink
         /// </summary>
-        public abstract uint Calories { get; }
+        public abstract uint Calories { get; }//abstract has to be overriden for each instance.
 
         /// <summary>
         /// gets weather the drink has ice or not
         /// </summary>
-        public virtual bool Ice { get; }
+        public virtual bool Ice { get; set; } = true;//makes the default true and virtual can 
+        //have a different default value that can be implemented as needed.
 
         /// <summary>
         /// gets the special instructions for the drink

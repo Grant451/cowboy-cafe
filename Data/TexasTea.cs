@@ -33,16 +33,6 @@ namespace CowboyCafe.Data
             set { lemon = value; }
         }
 
-        private bool ice = true;
-        /// <summary>
-        /// if the texas tea has ice
-        /// </summary>
-        public new bool Ice
-        {
-            get { return ice; }
-            set { ice = value; }
-        }
-
         /// <summary>
         /// the price for the Texas Tea
         /// </summary>

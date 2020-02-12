@@ -33,15 +33,11 @@ namespace CowboyCafe.Data
             set { decaf = value; }
         }
 
-        private bool ice = false;
         /// <summary>
         /// Cowboy coffee has no ice by default
         /// </summary>
-        public new bool Ice
-        {
-            get { return ice; }
-            set { ice = value; }
-        }
+        public override bool Ice { get; set; } = false;
+        
 
         /// <summary>
         /// the price for the Cowboy Coffee
