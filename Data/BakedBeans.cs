@@ -16,6 +16,15 @@ namespace CowboyCafe.Data
     public class BakedBeans : Side
     {
         /// <summary>
+        /// returns string name of Baked Beans
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            return "Baked Beans";
+        }
+
+        /// <summary>
         /// calories of the baked beans
         /// </summary>
         public override uint Calories

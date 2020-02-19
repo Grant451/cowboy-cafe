@@ -16,6 +16,15 @@ namespace CowboyCafe.Data
     public class ChiliCheeseFries : Side
     {
         /// <summary>
+        /// returns string name of Chili Cheese Fries
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            return "Chili Cheese Fries";
+        }
+
+        /// <summary>
         /// calories of the chili cheese fries
         /// </summary>
         public override uint Calories

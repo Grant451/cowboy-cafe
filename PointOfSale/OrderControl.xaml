@@ -45,7 +45,7 @@
         </StackPanel>
         <StackPanel Grid.Column="3">
             <TextBlock TextAlignment="Center">Order</TextBlock>
-            <ListView Name="OrderDisplay" Height="250" ></ListView>
+            <ListView Name="OrderDisplay" Height="350" ></ListView>
         </StackPanel>
     </Grid>
 </UserControl>

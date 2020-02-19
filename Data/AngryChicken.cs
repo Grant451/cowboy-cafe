@@ -15,6 +15,14 @@ namespace CowboyCafe.Data
     /// </summary>
     public class AngryChicken : Entree
     {
+        /// <summary>
+        /// returns string name of Angry Chicken
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            return "Angry Chicken";
+        }
 
         private bool bread = true;
         /// <summary>
