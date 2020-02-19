@@ -16,6 +16,15 @@ namespace CowboyCafe.Data
     public class RustlersRibs : Entree
     {
         /// <summary>
+        /// returns string name of Rustlers Ribs
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            return "Rustlers Ribs";
+        }
+
+        /// <summary>
         /// The price of the RustlersRibs
         /// </summary>
         public override double Price

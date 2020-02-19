@@ -16,6 +16,15 @@ namespace CowboyCafe.Data
     /// </summary>
     public class TrailBurger : Entree
     {
+        /// <summary>
+        /// returns string name of Trail Burger
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            return "Trail Burger";
+        }
+
         private bool bun = true;
         /// <summary>
         /// If the Trailburger has Bun

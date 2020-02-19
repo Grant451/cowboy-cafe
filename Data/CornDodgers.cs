@@ -10,11 +10,21 @@ using System.Text;
 
 namespace CowboyCafe.Data
 {
+
     /// <summary>
     /// a class representing the corn dodgers side
     /// </summary>
     public class CornDodgers : Side
     {
+        /// <summary>
+        /// returns string name of Corn Dodgers
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            return "Corn Dodgers";
+        }
+
         /// <summary>
         /// calories of the corn dodgers
         /// </summary>

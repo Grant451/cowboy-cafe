@@ -16,6 +16,15 @@ namespace CowboyCafe.Data
     /// </summary>
     public class PecosPulledPork : Entree
     {
+        /// <summary>
+        /// returns string name of Pecos Pulled Pork
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            return "Pecos Pulled Pork";
+        }
+
         private bool bread = true;
         /// <summary>
         /// If the Pecos Pulled Pork has bread

@@ -16,6 +16,15 @@ namespace CowboyCafe.Data
     /// </summary>
     public class TexasTripleBurger : Entree
     {
+        /// <summary>
+        /// returns string name of Texas Triple Burger
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            return "Texas Triple Burger";
+        }
+
         private bool bun = true;
         /// <summary>
         /// If the Texas Triple Burger has Bun

@@ -16,6 +16,15 @@ namespace CowboyCafe.Data
     /// </summary>
     public class DakotaDoubleBurger : Entree
     {
+        /// <summary>
+        /// returns string name of DakotaDoubleBurger
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            return "DakotaDoubleBurger";
+        }
+
         private bool bun = true;
         /// <summary>
         /// If the Dakota Double Burger has Bun
