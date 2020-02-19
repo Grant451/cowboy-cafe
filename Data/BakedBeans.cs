@@ -21,7 +21,18 @@ namespace CowboyCafe.Data
         /// <returns></returns>
         public override string ToString()
         {
-            return "Baked Beans";
+            switch (Size)
+            {
+                case Size.Small:
+                    return "Small Baked Beans"; //the calories
+                case Size.Medium:
+                    return "Medium Baked Beans"; 
+                case Size.Large:
+                    return "Large Baked Beans"; 
+                default:
+                    throw new NotImplementedException();
+            }
+
         }
 
         /// <summary>

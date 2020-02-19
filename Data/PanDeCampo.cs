@@ -16,6 +16,26 @@ namespace CowboyCafe.Data
     public class PanDeCampo : Side
     {
         /// <summary>
+        /// returns string name of Pan De Campo
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            switch (Size)
+            {
+                case Size.Small:
+                    return "Small Pan de Campo"; ;//the calories
+                case Size.Medium:
+                    return "Medium Pan de Campo"; ;
+                case Size.Large:
+                    return "Large Pan de Campo"; ;
+                default:
+                    throw new NotImplementedException();
+            }
+
+        }
+
+        /// <summary>
         /// calories of the Pan de Campo
         /// </summary>
         public override uint Calories
