@@ -12,6 +12,25 @@ namespace CowboyCafe.Data
 {
     public class TexasTea : Drink
     {
+        /// <summary>
+        /// returns string name of Texas Tea
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            switch (Size)
+            {
+                case Size.Small:
+                    return "Small Texas Tea"; //the calories
+                case Size.Medium:
+                    return "Medium Texas Tea";
+                case Size.Large:
+                    return "Large Texas Tea";
+                default:
+                    throw new NotImplementedException();
+            }
+
+        }
 
         private bool sweet = true;
         /// <summary>

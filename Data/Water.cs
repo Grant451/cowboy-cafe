@@ -12,6 +12,26 @@ namespace CowboyCafe.Data
 {
     public class Water : Drink
     {
+        /// <summary>
+        /// returns string name of Water
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            switch (Size)
+            {
+                case Size.Small:
+                    return "Small Water"; //the calories
+                case Size.Medium:
+                    return "Medium Water";
+                case Size.Large:
+                    return "Large Water";
+                default:
+                    throw new NotImplementedException();
+            }
+
+        }
+
         private bool lemon = false;
         /// <summary>
         /// if the Water has Lemon

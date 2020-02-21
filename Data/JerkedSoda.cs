@@ -21,7 +21,7 @@ namespace CowboyCafe.Data
             switch (Size)
             {
                 case Size.Small:
-                    return string.Format("Small {0} Jerked Soda", flavor);//"Small Baked Beans"; //the calories
+                    return string.Format("Small {0} Jerked Soda", flavor); //the calories
                 case Size.Medium:
                     return string.Format("Medium {0} Jerked Soda", flavor);
                 case Size.Large:
