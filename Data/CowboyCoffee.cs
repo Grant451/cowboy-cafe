@@ -21,11 +21,14 @@ namespace CowboyCafe.Data
             switch (Size)
             {
                 case Size.Small:
-                    return string.Format("Small {0} Cowboy Coffee",decaf);//the calories
+                    if (decaf) return "Small Decaf Cowboy Coffee";
+                    return "Small Cowboy Coffee";
                 case Size.Medium:
-                    return string.Format("Medium {0} Cowboy Coffee", decaf);
+                    if (decaf) return "Medium Decaf Cowboy Coffee";
+                    return "Medium Cowboy Coffee";
                 case Size.Large:
-                    return string.Format("Large {0} Cowboy Coffee", decaf);
+                    if (decaf) return "Large Decaf Cowboy Coffee";
+                    return "Large Cowboy Coffee";
                 default:
                     throw new NotImplementedException();
             }

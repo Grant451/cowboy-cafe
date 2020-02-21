@@ -17,7 +17,7 @@ namespace CowboyCafe.Data
         /// </summary>
         /// <returns></returns>
         public override string ToString()
-        {
+        {/*
             switch (Size)
             {
                 case Size.Small:
@@ -26,6 +26,37 @@ namespace CowboyCafe.Data
                     return string.Format("Medium {0} Jerked Soda", flavor);
                 case Size.Large:
                     return string.Format("Large {0} Jerked Soda", flavor);
+                default:
+                    throw new NotImplementedException();
+            }
+            */
+            switch (flavor)
+            {
+                case SodaFlavor.CreamSoda:
+                    if (this.Size == Size.Small) return "Small Cream Soda Jerked Soda";
+                    if (this.Size == Size.Medium) return "Medium Cream Soda Jerked Soda";
+                    if (this.Size == Size.Large) return "Large Cream Soda Jerked Soda";
+                    throw new NotImplementedException();
+                case SodaFlavor.OrangeSoda:
+                    if (this.Size == Size.Small) return "Small Orange Soda Jerked Soda";
+                    if (this.Size == Size.Medium) return "Medium Orange Soda Jerked Soda";
+                    if (this.Size == Size.Large) return "Large Orange Soda Jerked Soda";
+                    throw new NotImplementedException();
+                case SodaFlavor.Sarsparilla:
+                    if (this.Size == Size.Small) return "Small Sarsparilla Jerked Soda";
+                    if (this.Size == Size.Medium) return "Medium Sarsparilla Jerked Soda";
+                    if (this.Size == Size.Large) return "Large Sarsparilla Jerked Soda";
+                    throw new NotImplementedException();
+                case SodaFlavor.BirchBeer:
+                    if (this.Size == Size.Small) return "Small Birch Beer Jerked Soda";
+                    if (this.Size == Size.Medium) return "Medium Birch Beer Jerked Soda";
+                    if (this.Size == Size.Large) return "Large Birch Beer Jerked Soda";
+                    throw new NotImplementedException();
+                case SodaFlavor.RootBeer:
+                    if (this.Size == Size.Small) return "Small Root Beer Jerked Soda";
+                    if (this.Size == Size.Medium) return "Medium Root Beer Jerked Soda";
+                    if (this.Size == Size.Large) return "Large Root Beer Jerked Soda";
+                    throw new NotImplementedException();
                 default:
                     throw new NotImplementedException();
             }

@@ -22,7 +22,7 @@ namespace CowboyCafe.Data
         /// <returns></returns>
         public override string ToString()
         {
-            return "DakotaDoubleBurger";
+            return "Dakota Double Burger";
         }
 
         private bool bun = true;
