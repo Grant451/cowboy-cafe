@@ -19,10 +19,11 @@ namespace PointOfSale
     /// </summary>
     public partial class OrderControl : UserControl
     {
+        Order first;
         public OrderControl()
         {
             InitializeComponent();
-            //AddTrailBurgerButton.Height = 90;
+            first = new Order();
 
             //entrees:
             AddTrailBurgerButton.Click += AddTrailBurgerButton_Click;
@@ -49,78 +50,78 @@ namespace PointOfSale
 
         private void AddWater_Click(object sender, RoutedEventArgs e)
         {
-            OrderDisplay.Items.Add(new Water());
+            first.Add(new Water());
             
         }
 
         private void AddCowboyCoffee_Click(object sender, RoutedEventArgs e)
         {
-            OrderDisplay.Items.Add(new CowboyCoffee());
+            first.Add(new CowboyCoffee());
         }
 
         private void AddTexasTea_Click(object sender, RoutedEventArgs e)
         {
-            OrderDisplay.Items.Add(new TexasTea());
+            first.Add(new TexasTea());
         }
 
         private void AddJerkedSoda_Click(object sender, RoutedEventArgs e)
         {
-            OrderDisplay.Items.Add(new JerkedSoda());
+            first.Add(new JerkedSoda());
         }
 
         private void AddBakedBeans_Click(object sender, RoutedEventArgs e)
         {
-            OrderDisplay.Items.Add(new BakedBeans());
+            first.Add(new BakedBeans());
         }
 
         private void AddPanDeCampo_Click(object sender, RoutedEventArgs e)
         {
-            OrderDisplay.Items.Add(new PanDeCampo());
+            first.Add(new PanDeCampo());
         }
 
         private void AddCornDodgers_Click(object sender, RoutedEventArgs e)
         {
-            OrderDisplay.Items.Add(new CornDodgers());
+            first.Add(new CornDodgers());
         }
 
         private void AddChiliCheeseFries_Click(object sender, RoutedEventArgs e)
         {
-            OrderDisplay.Items.Add(new ChiliCheeseFries());
+            first.Add(new ChiliCheeseFries());
         }
 
         private void AddAngryChickenButton_Click(object sender, RoutedEventArgs e)
         {
-            OrderDisplay.Items.Add(new AngryChicken());
+            first.Add(new AngryChicken());
         }
 
         private void AddTexasTripleBurger_Click(object sender, RoutedEventArgs e)
         {
-            OrderDisplay.Items.Add(new TexasTripleBurger());
+            first.Add(new TexasTripleBurger());
         }
 
         private void AddDakotaDoubleBurger_Click(object sender, RoutedEventArgs e)
         {
-            OrderDisplay.Items.Add(new DakotaDoubleBurger());
+            first.Add(new DakotaDoubleBurger());
         }
 
         private void AddPecosPulledPork_Click(object sender, RoutedEventArgs e)
         {
-            OrderDisplay.Items.Add(new PecosPulledPork());
+            first.Add(new PecosPulledPork());
         }
 
         private void AddRustlersRibs_Click(object sender, RoutedEventArgs e)
         {
-            OrderDisplay.Items.Add(new RustlersRibs());
+            first.Add(new RustlersRibs());
         }
 
         private void AddTrailBurgerButton_Click(object sender, RoutedEventArgs e)//object is where the event came from, event arg is like the parameter for the obj
         {
-            OrderDisplay.Items.Add(new TrailBurger());
+            first.Add(new TrailBurger());
         }
 
         private void AddCowpokeChili_Click(object sender, RoutedEventArgs e)
         {
-            OrderDisplay.Items.Add(new CowpokeChili());
+            first.Add(new CowpokeChili());
         }
 
         
