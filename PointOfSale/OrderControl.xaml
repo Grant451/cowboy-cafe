@@ -44,8 +44,10 @@
             <Button Name="AddWater">Water</Button>
         </StackPanel>
         <StackPanel Grid.Column="3">
+
             <TextBlock TextAlignment="Center">Order</TextBlock>
             <ListView Name="OrderDisplay" Height="350" ></ListView>
+            
         </StackPanel>
     </Grid>
 </UserControl>

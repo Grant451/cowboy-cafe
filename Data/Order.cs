@@ -14,7 +14,7 @@ namespace CowboyCafe.Data
     public class Order
     {
 
-        public delegate void PropertyChangedEventHandler(object sender, PropertyChangedEventArgs e);
+        //public delegate void PropertyChangedEventHandler(object sender, PropertyChangedEventArgs e);
 
         /// <summary>
         /// keeps track of the last order number
@@ -29,12 +29,22 @@ namespace CowboyCafe.Data
         /// <summary>
         /// IEnumberable of IOrderItem used to access the information in items
         /// </summary>
-        public IEnumerable<IOrderItem> Items { get; }//=> throw new NotImplementedException();
+        public IEnumerable<IOrderItem> Items => PropertyChangedEventHandler();//{ get; }//=> throw new NotImplementedException();
+
+
+        /// <summary>
+        /// when an item is changed this event handler is invoked
+        /// </summary>
+        /// <returns>returns a Ienumberable list of IOrderItems</returns>
+        private IEnumerable<IOrderItem> PropertyChangedEventHandler()
+        {
+            throw new NotImplementedException();
+        }
 
         /// <summary>
         /// the price of the total order
         /// </summary>
-        public double Subtotal { get; }//=> 0;
+        public double Subtotal => 0;
 
         /// <summary>
         /// a unique number for each order
