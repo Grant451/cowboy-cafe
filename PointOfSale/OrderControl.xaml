@@ -13,13 +13,17 @@
         </Style>
     </UserControl.Resources>
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition/>
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <StackPanel Grid.Column="0">
+        <StackPanel Grid.Column="0" Grid.Row="2">
             <TextBlock TextAlignment="Center">Entree</TextBlock>
             <Button Name ="AddCowpokeChili">Cowpoke Chili</Button>
             <Button Name ="AddAngryChickenButton">Angry Chicken</Button>
@@ -29,14 +33,14 @@
             <Button Name ="AddDakotaDoubleBurger">Dakota Double Burger</Button>
             <Button Name ="AddTexasTripleBurger">Texas Triple Burger</Button>
         </StackPanel>
-        <StackPanel Grid.Column="1">
+        <StackPanel Grid.Column="1" Grid.Row="2">
             <TextBlock TextAlignment="Center">Side</TextBlock>
             <Button Name="AddChiliCheeseFries">Chili Cheese Fries</Button>
             <Button Name ="AddCornDodgers">Corn Dodgers</Button>
             <Button Name="AddPanDeCampo">Pan de Campo</Button>
             <Button Name="AddBakedBeans">Baked Beans</Button>
         </StackPanel>
-        <StackPanel Grid.Column="2">
+        <StackPanel Grid.Column="2" Grid.Row="2">
             <TextBlock TextAlignment="Center">Drinks</TextBlock>
             <Button Name ="AddJerkedSoda">Jerked Soda</Button>
             <Button Name ="AddTexasTea">Texas Tea</Button>
@@ -45,6 +49,9 @@
         </StackPanel>
         <StackPanel Grid.Column="3">
             <local:OrderSummaryControl/>
+        </StackPanel>
+        <StackPanel Grid.Column="0">
+            <local:MenuItemSelectionControl/>
         </StackPanel>
     </Grid>
 </UserControl>
