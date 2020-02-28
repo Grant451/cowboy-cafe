@@ -5,10 +5,30 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:PointOfSale"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
-      Title="OrderSummaryControl">
+      d:DesignHeight="450"
+      Title="OrderSummaryControl" Width="806">
 
     <Grid>
+        <StackPanel>
+            <TextBlock Text="Order:"/>
+            <TextBox Text="{Binding Path=OrderNumber, StringFormat=c}" TextAlignment="Left"/>
+            <ListBox ItemsSource="{Binding Path=Items}" Height="100" >
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition Width="25"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="{Binding}"/>
+                            <Button Name ="RemoveItem" Grid.Column="1" Click="OnRemoveItem">x</Button>
+                        </Grid>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+            <TextBlock Text="Subtotal:"/>
+            <TextBox Text="{Binding Path=Subtotal, StringFormat=c}"/>
+        </StackPanel>
         
     </Grid>
 </Page>

@@ -48,6 +48,7 @@ namespace PointOfSale
         private void AddWater_Click(object sender, RoutedEventArgs e)
         {
             OrderDisplay.Items.Add(new Water());
+            
         }
 
         private void AddCowboyCoffee_Click(object sender, RoutedEventArgs e)
