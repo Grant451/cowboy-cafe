@@ -42,6 +42,8 @@ namespace PointOfSale
             AddTexasTea.Click += AddTexasTea_Click;
             AddCowboyCoffee.Click += AddCowboyCoffee_Click;
             AddWater.Click += AddWater_Click;
+            
+            
 
         }
 

@@ -8,48 +8,70 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.ComponentModel;
+using System.Runtime.CompilerServices;
 
 namespace CowboyCafe.Data
 {
-    public class Order
+    public class Order : INotifyPropertyChanged
     {
 
-        //public delegate void PropertyChangedEventHandler(object sender, PropertyChangedEventArgs e);
+        //Subtotal += items.Price;
 
         /// <summary>
         /// keeps track of the last order number
         /// </summary>
-        private uint lastOrderNumber;
+        private static uint lastOrderNumber = 0;
 
         /// <summary>
         /// a backing list that holds the items in the order
         /// </summary>
-        private List<IOrderItem> items;
+        private List<IOrderItem> items = new List<IOrderItem>();
+
+
+        public Order()
+        {
+            lastOrderNumber += 1;
+        }
+
+
+        /// <summary>
+        /// enables the INotifyPropertyChanged to be used
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        // This method is called by the Set accessor of each property.  
+        // The CallerMemberName attribute that is applied to the optional propertyName  
+        // parameter causes the property name of the caller to be substituted as an argument.  
+        private void NotifyPropertyChanged([CallerMemberName] String propertyName = "")
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
 
         /// <summary>
         /// IEnumberable of IOrderItem used to access the information in items
         /// </summary>
-        public IEnumerable<IOrderItem> Items => PropertyChangedEventHandler();//{ get; }//=> throw new NotImplementedException();
-
-
-        /// <summary>
-        /// when an item is changed this event handler is invoked
-        /// </summary>
-        /// <returns>returns a Ienumberable list of IOrderItems</returns>
-        private IEnumerable<IOrderItem> PropertyChangedEventHandler()
-        {
-            throw new NotImplementedException();
-        }
+        public IEnumerable<IOrderItem> Items => items;//PropertyChangedEventHandler();//{ get; }//=> throw new NotImplementedException();
 
         /// <summary>
         /// the price of the total order
         /// </summary>
-        public double Subtotal => 0;
+        public double Subtotal
+        {
+            get
+            {
+                double total = 0;
+                foreach (IOrderItem x in items)
+                {
+                    total += x.Price;
+                }
+                return total;
+            }
+        }
 
         /// <summary>
         /// a unique number for each order
         /// </summary>
-        public static uint OrderNumber { get; }
+        public uint OrderNumber { get; }
 
         /// <summary>
         /// adds an item to itmes
@@ -58,6 +80,8 @@ namespace CowboyCafe.Data
         public void Add(IOrderItem item) 
         {
             items.Add(item);
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Items"));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Subtotal"));
         }
 
         /// <summary>
@@ -67,6 +91,8 @@ namespace CowboyCafe.Data
         public void Remove(IOrderItem item) 
         {
             items.Remove(item);
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Items"));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Subtotal"));
         }
     }
 }
