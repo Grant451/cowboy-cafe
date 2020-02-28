@@ -22,6 +22,7 @@ namespace PointOfSale
         public OrderSummaryControl()
         {
             InitializeComponent();
+
         }
 
         public void OnRemoveItem(object sender, RoutedEventArgs e)

@@ -24,6 +24,8 @@ namespace PointOfSale
         {
             InitializeComponent();
             first = new Order();
+            //set data context
+            this.DataContext = first;
 
             //entrees:
             AddTrailBurgerButton.Click += AddTrailBurgerButton_Click;

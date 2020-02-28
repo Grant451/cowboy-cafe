@@ -9,8 +9,9 @@
     <Grid>
         <StackPanel>
             <TextBlock Text="Order:"/>
-            <TextBox Text="{Binding Path=OrderNumber, StringFormat=c}" TextAlignment="Left"/>
-            <ListBox ItemsSource="{Binding Path=Items}" Height="100" >
+            <!--<TextBox Text="{Binding Path=OrderNumber, StringFormat=c}" TextAlignment="Left"/>-->
+            <ListBox  Name ="OrderSummaryDisplay" ItemsSource="{Binding Path=Items}" Height="300" >
+                <!--
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <Grid>
@@ -22,7 +23,8 @@
                             <Button Name ="RemoveItem" Grid.Column="1" Click="OnRemoveItem">x</Button>
                         </Grid>
                     </DataTemplate>
-                </ListBox.ItemTemplate>
+                </ListBox.ItemTemplate>-->
+                <!--<TextBox Text="{Binding Path=Items, StringFormat=c}"/>-->
             </ListBox>
             <TextBlock Text="Subtotal:"/>
             <TextBox Text="{Binding Path=Subtotal, StringFormat=c}"/>

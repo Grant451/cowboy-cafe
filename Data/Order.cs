@@ -58,6 +58,7 @@ namespace CowboyCafe.Data
                 }
                 return total;
             }
+            set { }
         }
 
         /// <summary>
