@@ -9,25 +9,30 @@
     <Grid>
         <StackPanel>
             <TextBlock Text="Order:"/>
+            <TextBox Text="{Binding Path=OrderNumber}"/>
             <!--<TextBox Text="{Binding Path=OrderNumber, StringFormat=c}" TextAlignment="Left"/>-->
-            <ListBox  Name ="OrderSummaryDisplay" ItemsSource="{Binding Path=Items}" Height="300" >
-                <!--
+            <TextBlock>items:</TextBlock>
+            
+            <ListBox ItemsSource="{Binding Path=Items}" Height="100" >
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <Grid>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition/>
-                                <ColumnDefinition Width="25"/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition Width="100"/><!--was 25-->
                             </Grid.ColumnDefinitions>
-                            <TextBlock Text="{Binding}"/>
-                            <Button Name ="RemoveItem" Grid.Column="1" Click="OnRemoveItem">x</Button>
+                            <TextBlock Text="{Binding}" Grid.Column="0" />
+                            <TextBlock Text="     " Grid.Column="1"/>
+                            <!--<Button Name ="RemoveItem" Grid.Column="1" Click="OnRemoveItem">x</Button>-->
+                            <TextBlock Text="{Binding Path=Price}" Grid.Column="3"/><!--was col 1-->
                         </Grid>
                     </DataTemplate>
-                </ListBox.ItemTemplate>-->
-                <!--<TextBox Text="{Binding Path=Items, StringFormat=c}"/>-->
+                </ListBox.ItemTemplate>
             </ListBox>
+            
             <TextBlock Text="Subtotal:"/>
-            <TextBox Text="{Binding Path=Subtotal, StringFormat=c}"/>
+            <TextBox Text="{Binding Path=Subtotal, StringFormat=c}"/><!--this works by itself to display the subtotal-->
         </StackPanel>
     </Grid>
 </UserControl>

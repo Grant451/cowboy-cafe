@@ -22,6 +22,7 @@ namespace CowboyCafe.Data
         /// </summary>
         private static uint lastOrderNumber = 0;
 
+        
         /// <summary>
         /// a backing list that holds the items in the order
         /// </summary>
@@ -39,10 +40,21 @@ namespace CowboyCafe.Data
         /// </summary>
         public event PropertyChangedEventHandler PropertyChanged;
 
+        /*
         /// <summary>
         /// IEnumberable of IOrderItem used to access the information in items
         /// </summary>
         public IEnumerable<IOrderItem> Items => items;//PropertyChangedEventHandler();//{ get; }//=> throw new NotImplementedException();
+        */
+
+        public IEnumerable<IOrderItem> Items
+        {
+            get
+            { 
+                return items.ToArray();
+            }
+            set { } 
+        }
 
         /// <summary>
         /// the price of the total order
@@ -64,7 +76,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// a unique number for each order
         /// </summary>
-        public uint OrderNumber { get; }
+        public uint OrderNumber { get; set; }
 
         /// <summary>
         /// adds an item to itmes
@@ -73,7 +85,9 @@ namespace CowboyCafe.Data
         public void Add(IOrderItem item) 
         {
             items.Add(item);
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Items"));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Items"));//was Items
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("OrderNumber"));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Subtotal"));
         }
 
@@ -84,7 +98,9 @@ namespace CowboyCafe.Data
         public void Remove(IOrderItem item) 
         {
             items.Remove(item);
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Items"));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Items"));//was Items
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("OrderNumber"));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Subtotal"));
         }
     }

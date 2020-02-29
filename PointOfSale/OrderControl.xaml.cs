@@ -53,7 +53,6 @@ namespace PointOfSale
         private void AddWater_Click(object sender, RoutedEventArgs e)
         {
             first.Add(new Water());
-            
         }
 
         private void AddCowboyCoffee_Click(object sender, RoutedEventArgs e)
