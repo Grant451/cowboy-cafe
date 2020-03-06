@@ -17,14 +17,18 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using CowboyCafe.Data;
+using CowboyCafe.ExtensionMethods;
 
-namespace PointOfSale
+//entree and side buttons
+namespace PointOfSale//CowboyCafe.PointOfSale
 {
     /// <summary>
     /// Interaction logic for MenuItemSelectionControl.xaml
     /// </summary>
     public partial class MenuItemSelectionControl : UserControl
     {
+        //private OrderControl orderControl;
+
         public MenuItemSelectionControl()
         {
             InitializeComponent();
@@ -34,10 +38,48 @@ namespace PointOfSale
             CompleteOrder.Click += CompleteOrder_Click;
         }
 
+        /*
+        public void ONItemAddButtonClicked(object sender, RoutedEventArgs)
+        {
+            var orderControl = this.FindAncestor<OrderControl>();
+            if (DataContext is Order order)
+            {
+                if(sender is Button button)
+                {
+                    switch (button.Tag)
+                    {
+                        case "CowpokeChili":
+                            order.Add(new CowpokeChili());
+                            orderControl.SwapScreen(new CustomizeCowpokeChili());
+                            break;
+
+                    }
+                }
+            }
+        }
+        */
+
         private void ItemSelection_Click(object sender, RoutedEventArgs e)
         {
             //first.Add(new CowpokeChili());
-            
+            var orderControl = this.FindAncestor<OrderControl>();
+            if (DataContext is Order order)
+            {
+                if (sender is Button button)
+                {
+                    switch (button.Tag)
+                    {
+                        case "CowpokeChili":
+                            var entree = new CowpokeChili();
+                            var screen = new CustomizeCowpokeChili();
+                            screen.DataContext = entree;
+                            order.Add(entree);
+                            orderControl.SwapScreen(new CustomizeCowpokeChili());
+                            break;
+
+                    }
+                }
+            }
         }
 
         private void CancelOrder_Click(object sender, RoutedEventArgs e)

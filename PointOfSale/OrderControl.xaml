@@ -25,7 +25,7 @@
         </Grid.ColumnDefinitions>
         <StackPanel Grid.Column="0" Grid.Row="2">
             <TextBlock TextAlignment="Center">Entree</TextBlock>
-            <Button Name ="AddCowpokeChili">Cowpoke Chili</Button>
+            <Button Name ="AddCowpokeChili" Tag="CowpokeChili">Cowpoke Chili</Button>
             <Button Name ="AddAngryChickenButton">Angry Chicken</Button>
             <Button Name ="AddTrailBurgerButton">TrailBurger</Button>
             <Button Name ="AddRustlersRibs">Rustlers Ribs</Button>
@@ -50,8 +50,9 @@
         <StackPanel Grid.Column="3">
             <local:OrderSummaryControl/>
         </StackPanel>
-        <StackPanel Grid.Column="0">
-            <local:MenuItemSelectionControl/>
-        </StackPanel>
+		<Border x:Name="Container" Grid.Column="0" Grid.Row="0">
+            <local:MenuItemSelectionControl></local:MenuItemSelectionControl>
+        </Border>
+        
     </Grid>
 </UserControl>

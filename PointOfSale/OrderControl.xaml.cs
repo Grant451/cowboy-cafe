@@ -12,6 +12,8 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using CowboyCafe.Data;
 
+//order selection buttons
+
 namespace PointOfSale
 {
     /// <summary>
@@ -25,7 +27,7 @@ namespace PointOfSale
             InitializeComponent();
             first = new Order();
             //set data context
-            this.DataContext = first;
+            DataContext = first;
 
             //entrees:
             AddTrailBurgerButton.Click += AddTrailBurgerButton_Click;
@@ -48,6 +50,11 @@ namespace PointOfSale
             
             
 
+        }
+
+        public void SwapScreen(UIElement element)
+        {
+            Container.Child = element;
         }
 
         private void AddWater_Click(object sender, RoutedEventArgs e)
@@ -123,6 +130,7 @@ namespace PointOfSale
         private void AddCowpokeChili_Click(object sender, RoutedEventArgs e)
         {
             first.Add(new CowpokeChili());
+
         }
 
         
