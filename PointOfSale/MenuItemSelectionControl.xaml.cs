@@ -27,19 +27,18 @@ namespace PointOfSale//CowboyCafe.PointOfSale
     /// </summary>
     public partial class MenuItemSelectionControl : UserControl
     {
-        //private OrderControl orderControl;
+        private OrderControl orderControl;
 
         public MenuItemSelectionControl()
         {
             InitializeComponent();
-            //buttons:
             ItemSelection.Click += ItemSelection_Click;
             CancelOrder.Click += CancelOrder_Click;
             CompleteOrder.Click += CompleteOrder_Click;
         }
 
-        /*
-        public void ONItemAddButtonClicked(object sender, RoutedEventArgs)
+        
+        public void ItemSelection_Click(object sender, RoutedEventArgs e)
         {
             var orderControl = this.FindAncestor<OrderControl>();
             if (DataContext is Order order)
@@ -57,10 +56,11 @@ namespace PointOfSale//CowboyCafe.PointOfSale
                 }
             }
         }
-        */
+        
 
+        /*
         private void ItemSelection_Click(object sender, RoutedEventArgs e)
-        {
+        {/*
             //first.Add(new CowpokeChili());
             var orderControl = this.FindAncestor<OrderControl>();
             if (DataContext is Order order)
@@ -80,7 +80,9 @@ namespace PointOfSale//CowboyCafe.PointOfSale
                     }
                 }
             }
-        }
+            
+        }*/
+        
 
         private void CancelOrder_Click(object sender, RoutedEventArgs e)
         {
