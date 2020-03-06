@@ -11,6 +11,7 @@
             <Button Name="ItemSelection" Tag="CowboyCafe.Data.CowpokeChili">Item Selection</Button>
             <Button Name="CancelOrder">Cancel Order</Button>
             <Button Name="CompleteOrder">Complete Order</Button>
+            <Button Name ="AddCowpokeChili" Tag="CowpokeChili">Cowpoke Chili</Button>
         </StackPanel>
     </Grid>
 </UserControl>

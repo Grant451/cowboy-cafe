@@ -6,6 +6,7 @@
  */
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -35,10 +36,22 @@ namespace PointOfSale//CowboyCafe.PointOfSale
             ItemSelection.Click += ItemSelection_Click;
             CancelOrder.Click += CancelOrder_Click;
             CompleteOrder.Click += CompleteOrder_Click;
+            AddCowpokeChili.Click += AddCowpokeChili_Click;
             //AddCowpokeChili.Click += AddItemAndOpenCustomizationScreen;
         }
 
+        public void SwapScreen(UIElement element)
+        {
+            //Container.Child = element;
+        }
 
+        private void AddCowpokeChili_Click(object sender, RoutedEventArgs e)
+        {
+            //first.Add(new CowpokeChili());
+
+        }
+
+        //this stays
         void AddItemAndOpenCustomizationScreen(IOrderItem item, FrameworkElement screen)
         {
             var order = DataContext as Order;
@@ -102,7 +115,7 @@ namespace PointOfSale//CowboyCafe.PointOfSale
             
         }*/
         
-
+            //these go to order control.cs
         private void CancelOrder_Click(object sender, RoutedEventArgs e)
         {
             this.DataContext = new Order();
