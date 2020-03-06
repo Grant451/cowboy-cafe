@@ -9,5 +9,6 @@
     <Grid>
         <TextBlock FontSize="30" Text="Customize Cowpoke Chili"/>
         <CheckBox IsChecked="{Binding Path=GreenOnions}"/>
+        <CheckBox IsChecked="{Binding Path=cheese}">Cheese</CheckBox>
     </Grid>
 </UserControl>

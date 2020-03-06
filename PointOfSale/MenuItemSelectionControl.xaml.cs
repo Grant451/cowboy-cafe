@@ -27,7 +27,7 @@ namespace PointOfSale//CowboyCafe.PointOfSale
     /// </summary>
     public partial class MenuItemSelectionControl : UserControl
     {
-        private OrderControl orderControl;
+        //private OrderControl orderControl;//##############might need this
 
         public MenuItemSelectionControl()
         {
@@ -35,6 +35,25 @@ namespace PointOfSale//CowboyCafe.PointOfSale
             ItemSelection.Click += ItemSelection_Click;
             CancelOrder.Click += CancelOrder_Click;
             CompleteOrder.Click += CompleteOrder_Click;
+            //AddCowpokeChili.Click += AddItemAndOpenCustomizationScreen;
+        }
+
+
+        void AddItemAndOpenCustomizationScreen(IOrderItem item, FrameworkElement screen)
+        {
+            var order = DataContext as Order;
+            if(order == null) throw new Exception("DataContext expected to be an Order instance");
+
+            if(screen != null)
+            {
+                var orderControl = this.FindAncestor<OrderControl>();
+                if (orderControl == null) throw new Exception("An ancestor of ordercontrol...");
+
+                screen.DataContext = item;
+                orderControl.SwapScreen(screen);
+            }
+
+            order.Add(item);
         }
 
         
