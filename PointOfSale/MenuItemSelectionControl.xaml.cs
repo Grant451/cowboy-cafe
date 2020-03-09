@@ -28,7 +28,7 @@ namespace PointOfSale//CowboyCafe.PointOfSale
     /// </summary>
     public partial class MenuItemSelectionControl : UserControl
     {
-        //private OrderControl orderControl;//##############might need this
+        //private OrderControl orderControl;//############## might need this
 
         public MenuItemSelectionControl()
         {
