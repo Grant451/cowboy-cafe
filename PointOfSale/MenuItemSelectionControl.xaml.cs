@@ -36,11 +36,13 @@ namespace PointOfSale//CowboyCafe.PointOfSale
             first = new Order();
             //set data context
             DataContext = first;
+            AddCowpokeChili.Click += itemAddTest;//test###
 
 
+            /*
             //entrees:
             AddTrailBurgerButton.Click += AddTrailBurgerButton_Click;
-            AddCowpokeChili.Click += AddCowpokeChili_Click;
+            //AddCowpokeChili.Click += AddCowpokeChili_Click;
             AddRustlersRibs.Click += AddRustlersRibs_Click;
             AddPecosPulledPork.Click += AddPecosPulledPork_Click;
             AddDakotaDoubleBurger.Click += AddDakotaDoubleBurger_Click;
@@ -57,12 +59,17 @@ namespace PointOfSale//CowboyCafe.PointOfSale
             AddCowboyCoffee.Click += AddCowboyCoffee_Click;
             AddWater.Click += AddWater_Click;
             //AddCowpokeChili.Click += AddItemAndOpenCustomizationScreen;
+            */
         }
 
+
+
+        /*
         public void SwapScreen(UIElement element)
         {
-            //Container.Child = element;
+            Container.Child = element;
         }
+        */
 
         /*
         private void AddCowpokeChili_Click(object sender, RoutedEventArgs e)
@@ -70,6 +77,26 @@ namespace PointOfSale//CowboyCafe.PointOfSale
             //first.Add(new CowpokeChili());
 
         }*/
+
+
+        void itemAddTest(object sender, RoutedEventArgs e)
+        {
+            var orderControl = this.FindAncestor<OrderControl>();
+            if (DataContext is Order order)
+            {
+                if (sender is Button button)
+                {
+                    switch (button.Tag)//***
+                    {
+                        case "CowpokeChili":
+                            order.Add(new CowpokeChili());
+                            orderControl.SwapScreen(new CustomizeCowpokeChili());
+                            break;
+
+                    }
+                }
+            }
+        }
 
         //this stays
         void AddItemAndOpenCustomizationScreen(IOrderItem item, FrameworkElement screen)
@@ -90,7 +117,7 @@ namespace PointOfSale//CowboyCafe.PointOfSale
         }
 
 
-
+        /*
         private void AddWater_Click(object sender, RoutedEventArgs e)
         {
             first.Add(new Water());
@@ -166,5 +193,6 @@ namespace PointOfSale//CowboyCafe.PointOfSale
             first.Add(new CowpokeChili());
 
         }
+        */
     }
 }

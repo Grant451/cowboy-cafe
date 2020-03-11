@@ -10,8 +10,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using CowboyCafe.Data;//added 3.11
-using CowboyCafe.ExtensionMethods;//added 3.11
+//using CowboyCafe.Data;//added 3.11
+//using CowboyCafe.ExtensionMethods;//added 3.11
 
 
 

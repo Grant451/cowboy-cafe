@@ -27,9 +27,9 @@ namespace PointOfSale
         {
             InitializeComponent();
             //first = new Order();//moved to menu selection control
-
             //set data context
             //DataContext = first;//moved to menu selection control
+
             //order creation/deletion buttions:
             ItemSelection.Click += ItemSelection_Click;
             CancelOrder.Click += CancelOrder_Click;
@@ -38,12 +38,13 @@ namespace PointOfSale
 
         }
 
+        
         public void SwapScreen(UIElement element)
         {
-            //Container.Child = element;
+            Container.Child = element;
         }
 
-
+        /*
         public void ItemSelection_Click(object sender, RoutedEventArgs e)
         {
             var orderControl = this.FindAncestor<OrderControl>();
@@ -51,7 +52,7 @@ namespace PointOfSale
             {
                 if (sender is Button button)
                 {
-                    switch (button.Tag)
+                    switch (button.Tag)//***
                     {
                         case "CowpokeChili":
                             order.Add(new CowpokeChili());
@@ -62,11 +63,11 @@ namespace PointOfSale
                 }
             }
         }
+        */
 
-
-        /*
+        
         private void ItemSelection_Click(object sender, RoutedEventArgs e)
-        {/*
+        {
             //first.Add(new CowpokeChili());
             var orderControl = this.FindAncestor<OrderControl>();
             if (DataContext is Order order)
@@ -87,7 +88,7 @@ namespace PointOfSale
                 }
             }
             
-        }*/
+        }
 
         //these go to order control.cs
         private void CancelOrder_Click(object sender, RoutedEventArgs e)

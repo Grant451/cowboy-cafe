@@ -7,8 +7,12 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-        <TextBlock FontSize="30" Text="Customize Cowpoke Chili"/>
-        <CheckBox IsChecked="{Binding Path=GreenOnions}"/>
-        <CheckBox IsChecked="{Binding Path=cheese}">Cheese</CheckBox>
+        <StackPanel>
+            <TextBlock FontSize="30" Text="Customize Cowpoke Chili"/>
+            <CheckBox IsChecked="{Binding Path=GreenOnions}">Green Onions</CheckBox>
+            <CheckBox IsChecked="{Binding Path=SourCream}">Sour Cream</CheckBox>
+            <CheckBox IsChecked="{Binding Path=Cheese}">Cheese</CheckBox><!--was Path=cheese-->
+            <CheckBox IsChecked="{Binding Path=TortillaStrips}">Tortilla Strips</CheckBox>
+        </StackPanel>
     </Grid>
 </UserControl>
