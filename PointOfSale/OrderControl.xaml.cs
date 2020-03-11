@@ -11,6 +11,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using CowboyCafe.Data;
+using CowboyCafe.ExtensionMethods;
 
 //order selection buttons
 
@@ -21,117 +22,85 @@ namespace PointOfSale
     /// </summary>
     public partial class OrderControl : UserControl
     {
-        Order first;
+        //Order first; //moved to menu selection control
         public OrderControl()
         {
             InitializeComponent();
-            first = new Order();
-            //set data context
-            DataContext = first;
+            //first = new Order();//moved to menu selection control
 
-            //entrees:
-            AddTrailBurgerButton.Click += AddTrailBurgerButton_Click;
-            AddCowpokeChili.Click += AddCowpokeChili_Click;
-            AddRustlersRibs.Click += AddRustlersRibs_Click;
-            AddPecosPulledPork.Click += AddPecosPulledPork_Click;
-            AddDakotaDoubleBurger.Click += AddDakotaDoubleBurger_Click;
-            AddTexasTripleBurger.Click += AddTexasTripleBurger_Click;
-            AddAngryChickenButton.Click += AddAngryChickenButton_Click;
-            //sides:
-            AddChiliCheeseFries.Click += AddChiliCheeseFries_Click;
-            AddCornDodgers.Click += AddCornDodgers_Click;
-            AddPanDeCampo.Click += AddPanDeCampo_Click;
-            AddBakedBeans.Click += AddBakedBeans_Click;
-            //drinks:
-            AddJerkedSoda.Click += AddJerkedSoda_Click;
-            AddTexasTea.Click += AddTexasTea_Click;
-            AddCowboyCoffee.Click += AddCowboyCoffee_Click;
-            AddWater.Click += AddWater_Click;
-            
-            
+            //set data context
+            //DataContext = first;//moved to menu selection control
+            //order creation/deletion buttions:
+            ItemSelection.Click += ItemSelection_Click;
+            CancelOrder.Click += CancelOrder_Click;
+            CompleteOrder.Click += CompleteOrder_Click;
+            //AddCowpokeChili.Click += AddCowpokeChili_Click;
 
         }
 
         public void SwapScreen(UIElement element)
         {
-            Container.Child = element;
+            //Container.Child = element;
         }
 
-        private void AddWater_Click(object sender, RoutedEventArgs e)
+
+        public void ItemSelection_Click(object sender, RoutedEventArgs e)
         {
-            first.Add(new Water());
+            var orderControl = this.FindAncestor<OrderControl>();
+            if (DataContext is Order order)
+            {
+                if (sender is Button button)
+                {
+                    switch (button.Tag)
+                    {
+                        case "CowpokeChili":
+                            order.Add(new CowpokeChili());
+                            orderControl.SwapScreen(new CustomizeCowpokeChili());
+                            break;
+
+                    }
+                }
+            }
         }
 
-        private void AddCowboyCoffee_Click(object sender, RoutedEventArgs e)
+
+        /*
+        private void ItemSelection_Click(object sender, RoutedEventArgs e)
+        {/*
+            //first.Add(new CowpokeChili());
+            var orderControl = this.FindAncestor<OrderControl>();
+            if (DataContext is Order order)
+            {
+                if (sender is Button button)
+                {
+                    switch (button.Tag)
+                    {
+                        case "CowpokeChili":
+                            var entree = new CowpokeChili();
+                            var screen = new CustomizeCowpokeChili();
+                            screen.DataContext = entree;
+                            order.Add(entree);
+                            orderControl.SwapScreen(new CustomizeCowpokeChili());
+                            break;
+
+                    }
+                }
+            }
+            
+        }*/
+
+        //these go to order control.cs
+        private void CancelOrder_Click(object sender, RoutedEventArgs e)
         {
-            first.Add(new CowboyCoffee());
+            this.DataContext = new Order();
         }
 
-        private void AddTexasTea_Click(object sender, RoutedEventArgs e)
+        private void CompleteOrder_Click(object sender, RoutedEventArgs e)
         {
-            first.Add(new TexasTea());
+            this.DataContext = new Order();
         }
 
-        private void AddJerkedSoda_Click(object sender, RoutedEventArgs e)
-        {
-            first.Add(new JerkedSoda());
-        }
 
-        private void AddBakedBeans_Click(object sender, RoutedEventArgs e)
-        {
-            first.Add(new BakedBeans());
-        }
-
-        private void AddPanDeCampo_Click(object sender, RoutedEventArgs e)
-        {
-            first.Add(new PanDeCampo());
-        }
-
-        private void AddCornDodgers_Click(object sender, RoutedEventArgs e)
-        {
-            first.Add(new CornDodgers());
-        }
-
-        private void AddChiliCheeseFries_Click(object sender, RoutedEventArgs e)
-        {
-            first.Add(new ChiliCheeseFries());
-        }
-
-        private void AddAngryChickenButton_Click(object sender, RoutedEventArgs e)
-        {
-            first.Add(new AngryChicken());
-        }
-
-        private void AddTexasTripleBurger_Click(object sender, RoutedEventArgs e)
-        {
-            first.Add(new TexasTripleBurger());
-        }
-
-        private void AddDakotaDoubleBurger_Click(object sender, RoutedEventArgs e)
-        {
-            first.Add(new DakotaDoubleBurger());
-        }
-
-        private void AddPecosPulledPork_Click(object sender, RoutedEventArgs e)
-        {
-            first.Add(new PecosPulledPork());
-        }
-
-        private void AddRustlersRibs_Click(object sender, RoutedEventArgs e)
-        {
-            first.Add(new RustlersRibs());
-        }
-
-        private void AddTrailBurgerButton_Click(object sender, RoutedEventArgs e)//object is where the event came from, event arg is like the parameter for the obj
-        {
-            first.Add(new TrailBurger());
-        }
-
-        private void AddCowpokeChili_Click(object sender, RoutedEventArgs e)
-        {
-            first.Add(new CowpokeChili());
-
-        }
 
         
     }

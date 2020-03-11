@@ -7,11 +7,37 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-        <StackPanel Orientation="Vertical">
-            <Button Name="ItemSelection" Tag="CowboyCafe.Data.CowpokeChili">Item Selection</Button>
-            <Button Name="CancelOrder">Cancel Order</Button>
-            <Button Name="CompleteOrder">Complete Order</Button>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Column="0" Grid.Row="2">
+            <TextBlock TextAlignment="Center">Entree</TextBlock>
             <Button Name ="AddCowpokeChili" Tag="CowpokeChili">Cowpoke Chili</Button>
+            <Button Name ="AddAngryChickenButton">Angry Chicken</Button>
+            <Button Name ="AddTrailBurgerButton">TrailBurger</Button>
+            <Button Name ="AddRustlersRibs">Rustlers Ribs</Button>
+            <Button Name ="AddPecosPulledPork">PecosPulled Pork</Button>
+            <Button Name ="AddDakotaDoubleBurger">Dakota Double Burger</Button>
+            <Button Name ="AddTexasTripleBurger">Texas Triple Burger</Button>
+        </StackPanel>
+        <StackPanel Grid.Column="1" Grid.Row="2">
+            <TextBlock TextAlignment="Center">Side</TextBlock>
+            <Button Name="AddChiliCheeseFries">Chili Cheese Fries</Button>
+            <Button Name ="AddCornDodgers">Corn Dodgers</Button>
+            <Button Name="AddPanDeCampo">Pan de Campo</Button>
+            <Button Name="AddBakedBeans">Baked Beans</Button>
+        </StackPanel>
+        <StackPanel Grid.Column="2" Grid.Row="2">
+            <TextBlock TextAlignment="Center">Drinks</TextBlock>
+            <Button Name ="AddJerkedSoda">Jerked Soda</Button>
+            <Button Name ="AddTexasTea">Texas Tea</Button>
+            <Button Name="AddCowboyCoffee">Cowboy Coffee</Button>
+            <Button Name="AddWater">Water</Button>
         </StackPanel>
     </Grid>
 </UserControl>
