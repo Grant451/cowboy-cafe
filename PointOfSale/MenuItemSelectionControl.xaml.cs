@@ -37,7 +37,8 @@ namespace PointOfSale//CowboyCafe.PointOfSale
             //set data context
             DataContext = first;
             AddCowpokeChili.Click += itemAddTest;//test###
-
+            //AddCowpokeChili.Click += AddCowpokeChili_Click;
+            //AddCowpokeChili.Click += AddItemAndOpenCustomizationScreen();
 
             /*
             //entrees:
@@ -187,11 +188,11 @@ namespace PointOfSale//CowboyCafe.PointOfSale
         {
             first.Add(new TrailBurger());
         }
-
+        
         private void AddCowpokeChili_Click(object sender, RoutedEventArgs e)
         {
             first.Add(new CowpokeChili());
-
+           
         }
         */
     }
