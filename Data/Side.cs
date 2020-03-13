@@ -45,5 +45,11 @@ namespace CowboyCafe.Data
         public abstract uint Calories { get; }
 
         public List<string> SpecialInstructions => new List<string>();
+
+        protected void NotifyOfPropertyChange(string propertyName)//protected only this class or a derived class can use this method
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));//the ? is a null check
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+        }
     }
 }

@@ -42,7 +42,11 @@ namespace CowboyCafe.Data
         public bool Sweet 
         {
             get { return sweet; }
-            set { sweet = value; }
+            set
+            {
+                sweet = value;
+                NotifyOfPropertyChange("Sweet");
+            }
         }
 
         private bool lemon = false;
@@ -52,7 +56,11 @@ namespace CowboyCafe.Data
         public bool Lemon
         {
             get { return lemon; }
-            set { lemon = value; }
+            set
+            {
+                lemon = value;
+                NotifyOfPropertyChange("Lemon");
+            }
         }
 
         /// <summary>

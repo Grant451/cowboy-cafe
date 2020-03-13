@@ -71,7 +71,11 @@ namespace CowboyCafe.Data
         public SodaFlavor Flavor 
         {
             get { return flavor; }
-            set { flavor = value; }
+            set
+            {
+                flavor = value;
+                NotifyOfPropertyChange("Flavor");
+            }
         }
         
 

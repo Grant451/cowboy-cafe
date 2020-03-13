@@ -42,7 +42,11 @@ namespace CowboyCafe.Data
         public bool RoomForCream
         {
             get { return roomForCream; }
-            set { roomForCream = value; }
+            set
+            {
+                roomForCream = value;
+                NotifyOfPropertyChange("RoomForCream");
+            }
         }
 
         private bool decaf = false;
@@ -52,7 +56,11 @@ namespace CowboyCafe.Data
         public bool Decaf
         {
             get { return decaf; }
-            set { decaf = value; }
+            set
+            {
+                decaf = value;
+                NotifyOfPropertyChange("Decaf");
+            }
         }
 
         /// <summary>

@@ -56,6 +56,7 @@ namespace CowboyCafe.Data
             }
         }
 
+
         /// <summary>
         /// Price of the corn dodgers
         /// </summary>

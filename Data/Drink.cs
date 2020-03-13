@@ -7,15 +7,32 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 
 namespace CowboyCafe.Data
 {
-    public abstract class Drink : IOrderItem
+    public abstract class Drink : IOrderItem, INotifyPropertyChanged
     {
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+
+        private Size size;//added 3.13
         /// <summary>
         /// Gets the size of the drink
         /// </summary>
-        public virtual Size Size { get; set; }
+        public virtual Size Size 
+        { 
+            get
+            {
+                return size;
+            }
+            set
+            {
+                Size = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Size"));
+            }
+        }
 
         /// <summary>
         /// gets the price of the drink
@@ -29,13 +46,20 @@ namespace CowboyCafe.Data
 
         /// <summary>
         /// gets weather the drink has ice or not
+        /// (= true makes the default true and virtual can 
+        /// have a different default value that can be implemented as needed.)
         /// </summary>
-        public virtual bool Ice { get; set; } = true;//makes the default true and virtual can 
-        //have a different default value that can be implemented as needed.
+        public virtual bool Ice { get; set; } = true;
 
         /// <summary>
         /// gets the special instructions for the drink
         /// </summary>
         public abstract List<string> SpecialInstructions { get; }
+
+        protected void NotifyOfPropertyChange(string propertyName)//protected only this class or a derived class can use this method
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));//the ? is a null check
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+        }
     }
 }
