@@ -38,6 +38,7 @@ namespace PointOfSale//CowboyCafe.PointOfSale
             DataContext = first;
 
             //entrees:
+            AddCowpokeChili.Click += itemAddTest;
             AddTrailBurgerButton.Click += itemAddTest;
             AddRustlersRibs.Click += itemAddTest;
             AddPecosPulledPork.Click += itemAddTest;
@@ -163,7 +164,7 @@ namespace PointOfSale//CowboyCafe.PointOfSale
                             order.Add(new TexasTea());
                             orderControl.SwapScreen(new CustomizeTexasTea());
                             break;
-                        case "CowBoyCoffee":
+                        case "CowboyCoffee":
                             order.Add(new CowboyCoffee());
                             orderControl.SwapScreen(new CustomizeCowboyCoffee());
                             break;
