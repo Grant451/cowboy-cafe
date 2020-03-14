@@ -51,7 +51,7 @@ namespace PointOfSale
         /// <param name="e"></param>
         public void ItemSelection_Click(object sender, RoutedEventArgs e)
         {
-            Container.Child = (UIElement)sender;//I don't think this works :P (but its worth a shot)
+            Container.Child = new MenuItemSelectionControl();//I don't think this works :P (but its worth a shot)
         }
 
         //taken out 3.13.2020

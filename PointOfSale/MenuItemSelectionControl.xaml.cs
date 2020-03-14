@@ -107,7 +107,7 @@ namespace PointOfSale//CowboyCafe.PointOfSale
             {
                 if (sender is Button button)
                 {
-                    switch (button.Tag)//***
+                    switch (button.Tag)
                     {
                         case "CowpokeChili":
                             order.Add(new CowpokeChili());
