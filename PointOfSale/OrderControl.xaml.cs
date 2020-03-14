@@ -44,7 +44,18 @@ namespace PointOfSale
             Container.Child = element;
         }
 
-        
+        /// <summary>
+        /// switch the screen back to menuitemselection when clicked
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public void ItemSelection_Click(object sender, RoutedEventArgs e)
+        {
+            Container.Child = (UIElement)sender;//I don't think this works :P (but its worth a shot)
+        }
+
+        //taken out 3.13.2020
+        /*
         public void ItemSelection_Click(object sender, RoutedEventArgs e)
         {
             var orderControl = this.FindAncestor<OrderControl>();
@@ -62,36 +73,36 @@ namespace PointOfSale
                     }
                 }
             }
-        }
-        
-
-        /*
-        private void ItemSelection_Click(object sender, RoutedEventArgs e)
-        {
-            //first.Add(new CowpokeChili());
-            var orderControl = this.FindAncestor<OrderControl>();
-            if (DataContext is Order order)
-            {
-                if (sender is Button button)
-                {
-                    switch (button.Tag)
-                    {
-                        case "CowpokeChili":
-                            var entree = new CowpokeChili();
-                            var screen = new CustomizeCowpokeChili();
-                            screen.DataContext = entree;
-                            order.Add(entree);
-                            orderControl.SwapScreen(new CustomizeCowpokeChili());
-                            break;
-
-                    }
-                }
-            }
-            
         }*/
 
-        //these go to order control.cs
-        private void CancelOrder_Click(object sender, RoutedEventArgs e)
+
+            /*
+            private void ItemSelection_Click(object sender, RoutedEventArgs e)
+            {
+                //first.Add(new CowpokeChili());
+                var orderControl = this.FindAncestor<OrderControl>();
+                if (DataContext is Order order)
+                {
+                    if (sender is Button button)
+                    {
+                        switch (button.Tag)
+                        {
+                            case "CowpokeChili":
+                                var entree = new CowpokeChili();
+                                var screen = new CustomizeCowpokeChili();
+                                screen.DataContext = entree;
+                                order.Add(entree);
+                                orderControl.SwapScreen(new CustomizeCowpokeChili());
+                                break;
+
+                        }
+                    }
+                }
+
+            }*/
+
+            //these go to order control.cs
+            private void CancelOrder_Click(object sender, RoutedEventArgs e)
         {
             this.DataContext = new Order();
         }

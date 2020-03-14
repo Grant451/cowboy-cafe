@@ -36,7 +36,26 @@ namespace PointOfSale//CowboyCafe.PointOfSale
             first = new Order();
             //set data context
             DataContext = first;
-            AddCowpokeChili.Click += itemAddTest;//test###
+
+            //entrees:
+            AddTrailBurgerButton.Click += itemAddTest;
+            AddRustlersRibs.Click += itemAddTest;
+            AddPecosPulledPork.Click += itemAddTest;
+            AddDakotaDoubleBurger.Click += itemAddTest;
+            AddTexasTripleBurger.Click += itemAddTest;
+            AddAngryChickenButton.Click += itemAddTest;
+            //sides:
+            AddChiliCheeseFries.Click += itemAddTest;
+            AddCornDodgers.Click += itemAddTest;
+            AddPanDeCampo.Click += itemAddTest;
+            AddBakedBeans.Click += itemAddTest;
+            //drinks:
+            AddJerkedSoda.Click += itemAddTest;
+            AddTexasTea.Click += itemAddTest;
+            AddCowboyCoffee.Click += itemAddTest;
+            AddWater.Click += itemAddTest;
+
+            //AddCowpokeChili.Click += itemAddTest;//test###
             //AddCowpokeChili.Click += AddCowpokeChili_Click;
             //AddCowpokeChili.Click += AddItemAndOpenCustomizationScreen();
 
@@ -59,6 +78,7 @@ namespace PointOfSale//CowboyCafe.PointOfSale
             AddTexasTea.Click += AddTexasTea_Click;
             AddCowboyCoffee.Click += AddCowboyCoffee_Click;
             AddWater.Click += AddWater_Click;
+
             //AddCowpokeChili.Click += AddItemAndOpenCustomizationScreen;
             */
         }
@@ -93,7 +113,64 @@ namespace PointOfSale//CowboyCafe.PointOfSale
                             order.Add(new CowpokeChili());
                             orderControl.SwapScreen(new CustomizeCowpokeChili());
                             break;
-
+                        case "AngryChicken":
+                            order.Add(new AngryChicken());
+                            orderControl.SwapScreen(new CustomizeAngryChicken());
+                            break;
+                        case "TrailBurger":
+                            order.Add(new TrailBurger());
+                            orderControl.SwapScreen(new CustomizeTrailburger());
+                            break;
+                        //RustlersRibs does not take a customization
+                        /*
+                    case "RustlersRibs":
+                        order.Add(new RustlersRibs());
+                        orderControl.SwapScreen(new Customize)
+                        */
+                        case "PecosPulledPork":
+                            order.Add(new PecosPulledPork());
+                            orderControl.SwapScreen(new CustomizePecosPulledPork());
+                            break;
+                        case "DakotaDoubleBurger":
+                            order.Add(new DakotaDoubleBurger());
+                            orderControl.SwapScreen(new CustomizeDakotaDoubleBurger());
+                            break;
+                        case "TexasTripleBurger":
+                            order.Add(new TexasTripleBurger());
+                            orderControl.SwapScreen(new CustomizeTexasTripleBurger());
+                            break;
+                        case "ChiliCheeseFries":
+                            order.Add(new ChiliCheeseFries());
+                            orderControl.SwapScreen(new CustomizeSide());
+                            break;
+                        case "CornDodgers":
+                            order.Add(new CornDodgers());
+                            orderControl.SwapScreen(new CustomizeSide());
+                            break;
+                        case "PanDeCampo":
+                            order.Add(new PanDeCampo());
+                            orderControl.SwapScreen(new CustomizeSide());
+                            break;
+                        case "BakedBeans":
+                            order.Add(new BakedBeans());
+                            orderControl.SwapScreen(new CustomizeSide());
+                            break;
+                        case "JerkedSoda":
+                            order.Add(new JerkedSoda());
+                            orderControl.SwapScreen(new CustomizeJerkedSoda());
+                            break;
+                        case "TexasTea":
+                            order.Add(new TexasTea());
+                            orderControl.SwapScreen(new CustomizeTexasTea());
+                            break;
+                        case "CowBoyCoffee":
+                            order.Add(new CowboyCoffee());
+                            orderControl.SwapScreen(new CustomizeCowboyCoffee());
+                            break;
+                        case "Water":
+                            order.Add(new Water());
+                            orderControl.SwapScreen(new CustomizeWater());
+                            break;
                     }
                 }
             }

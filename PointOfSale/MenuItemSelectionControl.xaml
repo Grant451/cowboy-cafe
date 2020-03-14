@@ -18,26 +18,26 @@
         <StackPanel Grid.Column="0" Grid.Row="2">
             <TextBlock TextAlignment="Center">Entree</TextBlock>
             <Button Name ="AddCowpokeChili" Tag="CowpokeChili">Cowpoke Chili</Button>
-            <Button Name ="AddAngryChickenButton">Angry Chicken</Button>
-            <Button Name ="AddTrailBurgerButton">TrailBurger</Button>
-            <Button Name ="AddRustlersRibs">Rustlers Ribs</Button>
-            <Button Name ="AddPecosPulledPork">PecosPulled Pork</Button>
-            <Button Name ="AddDakotaDoubleBurger">Dakota Double Burger</Button>
-            <Button Name ="AddTexasTripleBurger">Texas Triple Burger</Button>
+            <Button Name ="AddAngryChickenButton" Tag="AngryChicken">Angry Chicken</Button>
+            <Button Name ="AddTrailBurgerButton" Tag="TrailBurger">TrailBurger</Button>
+            <Button Name ="AddRustlersRibs" Tag="RustlersRibs">Rustlers Ribs</Button>
+            <Button Name ="AddPecosPulledPork" Tag="PecosPulledPork">PecosPulled Pork</Button>
+            <Button Name ="AddDakotaDoubleBurger" Tag="DakotaDoubleBurger">Dakota Double Burger</Button>
+            <Button Name ="AddTexasTripleBurger" Tag="TexasTripleBurger">Texas Triple Burger</Button>
         </StackPanel>
         <StackPanel Grid.Column="1" Grid.Row="2">
             <TextBlock TextAlignment="Center">Side</TextBlock>
-            <Button Name="AddChiliCheeseFries">Chili Cheese Fries</Button>
-            <Button Name ="AddCornDodgers">Corn Dodgers</Button>
-            <Button Name="AddPanDeCampo">Pan de Campo</Button>
-            <Button Name="AddBakedBeans">Baked Beans</Button>
+            <Button Name="AddChiliCheeseFries" Tag="ChiliCheeseFries">Chili Cheese Fries</Button>
+            <Button Name ="AddCornDodgers" Tag="CornDodgers">Corn Dodgers</Button>
+            <Button Name="AddPanDeCampo" Tag="PanDeCampo">Pan de Campo</Button>
+            <Button Name="AddBakedBeans" Tag="BakedBeans">Baked Beans</Button>
         </StackPanel>
         <StackPanel Grid.Column="2" Grid.Row="2">
             <TextBlock TextAlignment="Center">Drinks</TextBlock>
-            <Button Name ="AddJerkedSoda">Jerked Soda</Button>
-            <Button Name ="AddTexasTea">Texas Tea</Button>
-            <Button Name="AddCowboyCoffee">Cowboy Coffee</Button>
-            <Button Name="AddWater">Water</Button>
+            <Button Name ="AddJerkedSoda" Tag="JerkedSoda">Jerked Soda</Button>
+            <Button Name ="AddTexasTea" Tag="TexasTea">Texas Tea</Button>
+            <Button Name="AddCowboyCoffee" Tag="CowboyCoffee">Cowboy Coffee</Button>
+            <Button Name="AddWater" Tag="Water">Water</Button>
         </StackPanel>
     </Grid>
 </UserControl>
