@@ -22,13 +22,13 @@ namespace PointOfSale
     /// </summary>
     public partial class OrderControl : UserControl
     {
-        //Order first; //moved to menu selection control
+        Order first; //moved to menu selection control
         public OrderControl()
         {
             InitializeComponent();
-            //first = new Order();//moved to menu selection control
+            first = new Order();//moved to menu selection control
             //set data context
-            //DataContext = first;//moved to menu selection control
+            DataContext = first;//moved to menu selection control
 
             //order creation/deletion buttions:
             ItemSelection.Click += ItemSelection_Click;
@@ -51,8 +51,10 @@ namespace PointOfSale
         /// <param name="e"></param>
         public void ItemSelection_Click(object sender, RoutedEventArgs e)
         {
-            Container.Child = new MenuItemSelectionControl();//I don't think this works :P (but its worth a shot)
+            Container.Child = new MenuItemSelectionControl();
         }
+
+
 
         //taken out 3.13.2020
         /*
@@ -102,7 +104,7 @@ namespace PointOfSale
             }*/
 
             //these go to order control.cs
-            private void CancelOrder_Click(object sender, RoutedEventArgs e)
+        private void CancelOrder_Click(object sender, RoutedEventArgs e)
         {
             this.DataContext = new Order();
         }
@@ -113,7 +115,13 @@ namespace PointOfSale
         }
 
 
+        public void NotifySpecialInstructions()
+        {
+            if (DataContext is Order order) order.NotifyChange();
 
-        
+        }
+
+
+
     }
 }

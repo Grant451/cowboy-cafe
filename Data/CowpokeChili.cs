@@ -1,17 +1,17 @@
 ﻿//assumed Nathan Bean (approved by Grant Clothier 1.29.2020)
 using System;
 using System.Collections.Generic;
-
+using System.ComponentModel;
 
 namespace CowboyCafe.Data
 {
     /// <summary>
     /// A class representing the Cowpoke Chili entree
     /// </summary>
-    public class CowpokeChili : Entree
+    public class CowpokeChili : Entree, INotifyPropertyChanged
     {
-        
 
+        public event PropertyChangedEventHandler PropertyChanged;
         /// <summary>
         /// returns string name of Cowpokechili
         /// </summary>
@@ -121,7 +121,13 @@ namespace CowboyCafe.Data
             }
         }
 
-       
+        private void NotifyOfPropertyChange(string propertyName)//protected only this class or a derived class can use this method
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));//the ? is a null check
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+        }
+
+
     }
 }
 

@@ -29,13 +29,13 @@ namespace PointOfSale//CowboyCafe.PointOfSale
     public partial class MenuItemSelectionControl : UserControl
     {
         //private OrderControl orderControl;//############## might need this
-        Order first; //moved to menu selection control
+        //Order first; //moved to menu selection control
         public MenuItemSelectionControl()
         {
             InitializeComponent();
-            first = new Order();
+            //first = new Order();
             //set data context
-            DataContext = first;
+            //DataContext = first;
 
             //entrees:
             AddCowpokeChili.Click += itemAddTest;
@@ -100,7 +100,7 @@ namespace PointOfSale//CowboyCafe.PointOfSale
 
         }*/
 
-
+        
         void itemAddTest(object sender, RoutedEventArgs e)
         {
             var orderControl = this.FindAncestor<OrderControl>();
@@ -123,11 +123,6 @@ namespace PointOfSale//CowboyCafe.PointOfSale
                             orderControl.SwapScreen(new CustomizeTrailburger());
                             break;
                         //RustlersRibs does not take a customization
-                        /*
-                    case "RustlersRibs":
-                        order.Add(new RustlersRibs());
-                        orderControl.SwapScreen(new Customize)
-                        */
                         case "PecosPulledPork":
                             order.Add(new PecosPulledPork());
                             orderControl.SwapScreen(new CustomizePecosPulledPork());

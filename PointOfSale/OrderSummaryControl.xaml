@@ -12,11 +12,14 @@
             <TextBox Text="{Binding Path=OrderNumber}"/>
             <!--<TextBox Text="{Binding Path=OrderNumber, StringFormat=c}" TextAlignment="Left"/>-->
             <TextBlock>items:</TextBlock>
-            
             <ListBox ItemsSource="{Binding Path=Items}" Height="100" >
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition/>
                                 <ColumnDefinition/>
@@ -26,6 +29,7 @@
                             <TextBlock Text="     " Grid.Column="1"/>
                             <!--<Button Name ="RemoveItem" Grid.Column="1" Click="OnRemoveItem">x</Button>-->
                             <TextBlock Text="{Binding Path=Price}" Grid.Column="3"/><!--was col 1-->
+                            <ListBox ItemsSource="{Binding Path=SpecialInstructions}" Grid.Column="1" Grid.Row="1"/>
                         </Grid>
                     </DataTemplate>
                 </ListBox.ItemTemplate>

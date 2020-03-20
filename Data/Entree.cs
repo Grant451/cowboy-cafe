@@ -14,7 +14,7 @@ namespace CowboyCafe.Data
     /// <summary>
     /// an abstract base class for all the entrees
     /// </summary>
-    public abstract class Entree : IOrderItem, INotifyPropertyChanged//InotifyPropertyChanged
+    public abstract class Entree : IOrderItem//, INotifyPropertyChanged//InotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -33,6 +33,7 @@ namespace CowboyCafe.Data
         /// </summary>
         public abstract List<string> SpecialInstructions { get; }
 
+        
         protected void NotifyOfPropertyChange(string propertyName)//protected only this class or a derived class can use this method
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));//the ? is a null check

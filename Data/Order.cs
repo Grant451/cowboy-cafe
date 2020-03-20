@@ -122,5 +122,11 @@ namespace CowboyCafe.Data
 
             }
         }
+
+        public void NotifyChange()
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Items"));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Subtotal"));
+        }
     }
 }
