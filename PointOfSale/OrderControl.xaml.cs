@@ -118,7 +118,6 @@ namespace PointOfSale
         public void NotifySpecialInstructions()
         {
             if (DataContext is Order order) order.NotifyChange();
-
         }
 
 

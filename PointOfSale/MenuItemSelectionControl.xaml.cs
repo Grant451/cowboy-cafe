@@ -111,8 +111,11 @@ namespace PointOfSale//CowboyCafe.PointOfSale
                     switch (button.Tag)
                     {
                         case "CowpokeChili":
-                            order.Add(new CowpokeChili());
-                            orderControl.SwapScreen(new CustomizeCowpokeChili());
+                            var cow = new CowpokeChili();
+                            var cowCust = new CustomizeCowpokeChili();
+                            cowCust.DataContext = cow;
+                            order.Add(cow);
+                            orderControl.SwapScreen(cowCust);
                             break;
                         case "AngryChicken":
                             order.Add(new AngryChicken());
