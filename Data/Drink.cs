@@ -29,7 +29,7 @@ namespace CowboyCafe.Data
             }
             set
             {
-                Size = value;
+                size = value;//was Size
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Size"));
             }
         }

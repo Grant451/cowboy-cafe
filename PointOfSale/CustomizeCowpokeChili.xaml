@@ -9,10 +9,30 @@
     <Grid>
         <StackPanel>
             <TextBlock FontSize="30" Text="Customize Cowpoke Chili"/>
-            <CheckBox IsChecked="{Binding Path=GreenOnions}">Green Onions</CheckBox>
-            <CheckBox IsChecked="{Binding Path=SourCream}">Sour Cream</CheckBox>
-            <CheckBox IsChecked="{Binding Path=Cheese}">Cheese</CheckBox><!--was Path=cheese-->
-            <CheckBox IsChecked="{Binding Path=TortillaStrips}">Tortilla Strips</CheckBox>
+            <CheckBox IsChecked="{Binding Path=GreenOnions}">
+                Green Onions
+                <CheckBox.LayoutTransform>
+                    <ScaleTransform ScaleX="3" ScaleY="3" />
+                </CheckBox.LayoutTransform>
+            </CheckBox>
+            <CheckBox IsChecked="{Binding Path=SourCream}">
+                Sour Cream
+                <CheckBox.LayoutTransform>
+                    <ScaleTransform ScaleX="3" ScaleY="3" />
+                </CheckBox.LayoutTransform>
+            </CheckBox>
+            <CheckBox IsChecked="{Binding Path=Cheese}"><!--was Path=cheese-->
+                Cheese
+                <CheckBox.LayoutTransform>
+                    <ScaleTransform ScaleX="3" ScaleY="3" />
+                </CheckBox.LayoutTransform>
+            </CheckBox>
+            <CheckBox IsChecked="{Binding Path=TortillaStrips}">
+                Tortilla Strips
+                <CheckBox.LayoutTransform>
+                    <ScaleTransform ScaleX="3" ScaleY="3" />
+                </CheckBox.LayoutTransform>
+            </CheckBox>
         </StackPanel>
         <!--<Button Click="EventChanged">Complete</Button>-->
     </Grid>

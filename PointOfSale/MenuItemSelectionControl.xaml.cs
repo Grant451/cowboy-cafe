@@ -116,6 +116,7 @@ namespace PointOfSale//CowboyCafe.PointOfSale
                             order.Add(texasTripleBurger);
                             orderControl.SwapScreen(texasTripleBurgerCust);
                             break;
+                        //sides:
                         case "ChiliCheeseFries":
                             var chiliCheeseFries = new ChiliCheeseFries();
                             var chiliCheeseFriesCust = new CustomizeSide();
@@ -135,9 +136,13 @@ namespace PointOfSale//CowboyCafe.PointOfSale
                             order.Add(new BakedBeans());
                             orderControl.SwapScreen(new CustomizeSide());
                             break;
+                        //drinks:
                         case "JerkedSoda":
-                            order.Add(new JerkedSoda());
-                            orderControl.SwapScreen(new CustomizeJerkedSoda());
+                            var jerkedSoda = new JerkedSoda();
+                            var jerkedSodaCust = new CustomizeJerkedSoda();
+                            jerkedSodaCust.DataContext = jerkedSoda;
+                            order.Add(jerkedSoda);
+                            orderControl.SwapScreen(jerkedSodaCust);
                             break;
                         case "TexasTea":
                             order.Add(new TexasTea());

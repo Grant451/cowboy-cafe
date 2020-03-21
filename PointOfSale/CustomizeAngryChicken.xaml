@@ -9,8 +9,21 @@
     <Grid>
         <StackPanel>
             <TextBlock FontSize="30" Text="Customize Angry Chicken"/>
-            <CheckBox IsChecked="{Binding Path=Bread}">Bread</CheckBox>
-            <CheckBox IsChecked="{Binding Path=Pickle}">Pickle</CheckBox>
+            <!--<CheckBox IsChecked="{Binding Path=Bread}">Bread</CheckBox>-->
+            <!--<CheckBox IsChecked="{Binding Path=Pickle}">Pickle</CheckBox>-->
+            <CheckBox IsChecked="{Binding Path=Pickle}">
+                Pickle
+                <CheckBox.LayoutTransform>
+                    <ScaleTransform ScaleX="3" ScaleY="3" />
+                </CheckBox.LayoutTransform>
+            </CheckBox>
+            <CheckBox IsChecked="{Binding Path=Bread}">
+                Bread
+                <CheckBox.LayoutTransform>
+                    <ScaleTransform ScaleX="3" ScaleY="3" />
+                </CheckBox.LayoutTransform>
+            </CheckBox>
+            
         </StackPanel>
     </Grid>
 </UserControl>

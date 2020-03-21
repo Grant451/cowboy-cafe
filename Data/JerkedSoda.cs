@@ -7,10 +7,11 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 
 namespace CowboyCafe.Data
 {
-    public class JerkedSoda : Drink
+    public class JerkedSoda : Drink, INotifyPropertyChanged
     {
         /// <summary>
         /// returns string name of Jerked Soda
@@ -30,6 +31,8 @@ namespace CowboyCafe.Data
                     throw new NotImplementedException();
             }
             */
+            
+
             switch (flavor)
             {
                 case SodaFlavor.CreamSoda:

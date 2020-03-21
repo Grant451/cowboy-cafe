@@ -17,6 +17,7 @@
             <CheckBox IsChecked="{Binding Path=Small}">Small</CheckBox>
             <CheckBox IsChecked="{Binding Path=Meduim}">Meduim</CheckBox>
             <CheckBox IsChecked="{Binding Path=Large}">Large</CheckBox>
+            <CheckBox IsChecked="{Binding Path=Ice}">Ice</CheckBox>
         </StackPanel>
     </Grid>
 </UserControl>
