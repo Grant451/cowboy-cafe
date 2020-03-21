@@ -4,9 +4,49 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PointOfSale"
+             xmlns:sys="clr-namespace:System;assembly=mscorlib"
+             xmlns:data="clr-namespace:CowboyCafe.Data;assembly=CowboyCafe.Data"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
+
+    <UserControl.Resources>
+        <ObjectDataProvider MethodName="GetValues" ObjectType="{x:Type sys:Enum}" x:Key="flavorEnum">
+            <ObjectDataProvider.MethodParameters>
+                <x:Type TypeName="data:SodaFlavor" />
+            </ObjectDataProvider.MethodParameters>
+        </ObjectDataProvider>
+        <ObjectDataProvider MethodName="GetValues"
+                    ObjectType="{x:Type sys:Enum}"
+                    x:Key="sizeEnum">
+            <ObjectDataProvider.MethodParameters>
+                <x:Type TypeName="data:Size" />
+            </ObjectDataProvider.MethodParameters>
+        </ObjectDataProvider>
+    </UserControl.Resources>
+
     <Grid>
+        <StackPanel Width="300">
+            <TextBlock>Customize Jerked Soda</TextBlock>
+            
+            <ListBox
+            ItemsSource="{Binding Source={StaticResource flavorEnum}}"
+            SelectedItem="{Binding Path=Flavor}"/>
+            
+            
+            <ListBox
+            ItemsSource="{Binding Source={StaticResource sizeEnum}}"
+            SelectedItem="{Binding Path=Size}"/>
+            
+            <CheckBox IsChecked="{Binding Path=Ice}">
+                Ice
+                <CheckBox.LayoutTransform>
+                    <ScaleTransform ScaleX="3" ScaleY="3" />
+                </CheckBox.LayoutTransform>
+            </CheckBox>
+        </StackPanel>
+    </Grid>
+
+    <!--<Grid>
         <StackPanel>
             <TextBlock FontSize="30" Text="Customize Jerked Soda"/>
             <CheckBox IsChecked="{Binding Path=CreamSoda}">CreamSoda</CheckBox>
@@ -16,8 +56,8 @@
             <CheckBox IsChecked="{Binding Path=RootBeer}">RootBeer</CheckBox>
             <CheckBox IsChecked="{Binding Path=Small}">Small</CheckBox>
             <CheckBox IsChecked="{Binding Path=Meduim}">Meduim</CheckBox>
-            <CheckBox IsChecked="{Binding Path=Large}">Large</CheckBox>
-            <CheckBox IsChecked="{Binding Path=Ice}">Ice</CheckBox>
+            <CheckBox IsChecked="{Binding Path=Large}">Large</CheckBox>-->
+            <!--<CheckBox IsChecked="{Binding Path=Ice}">Ice</CheckBox>
         </StackPanel>
-    </Grid>
+    </Grid>-->
 </UserControl>

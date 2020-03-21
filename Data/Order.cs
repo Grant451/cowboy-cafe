@@ -94,6 +94,7 @@ namespace CowboyCafe.Data
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Subtotal"));
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));//added 3.11
+            //PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Ice"));
         }
 
         /// <summary>
@@ -111,6 +112,8 @@ namespace CowboyCafe.Data
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("OrderNumber"));
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Subtotal"));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));//added 3.11
+            //PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Ice"));
         }
 
         private void OnItemPropertyChanged(object sender, PropertyChangedEventArgs e)

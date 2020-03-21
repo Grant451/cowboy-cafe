@@ -31,6 +31,7 @@ namespace CowboyCafe.Data
             {
                 size = value;//was Size
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Size"));
+                //PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Ice"));
             }
         }
 
@@ -44,12 +45,22 @@ namespace CowboyCafe.Data
         /// </summary>
         public abstract uint Calories { get; }//abstract has to be overriden for each instance.
 
+        private bool ice = true;
         /// <summary>
         /// gets weather the drink has ice or not
         /// (= true makes the default true and virtual can 
         /// have a different default value that can be implemented as needed.)
+        /// was: public virtual bool Ice { get; set;} = true;//and did not have a backing variable 3.21
         /// </summary>
-        public virtual bool Ice { get; set; } = true;
+        public virtual bool Ice 
+        {
+            get { return ice; }
+            set
+            {
+                ice = value;
+                NotifyOfPropertyChange("Ice");
+            }
+        }
 
         /// <summary>
         /// gets the special instructions for the drink
@@ -59,6 +70,7 @@ namespace CowboyCafe.Data
         protected void NotifyOfPropertyChange(string propertyName)//protected only this class or a derived class can use this method
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));//the ? is a null check
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Ice"));
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
         }
     }

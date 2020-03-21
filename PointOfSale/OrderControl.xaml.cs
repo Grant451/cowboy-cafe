@@ -57,11 +57,13 @@ namespace PointOfSale
         private void CancelOrder_Click(object sender, RoutedEventArgs e)
         {
             this.DataContext = new Order();
+            Container.Child = new MenuItemSelectionControl();//assuming a new order is going to be created after cancel
         }
 
         private void CompleteOrder_Click(object sender, RoutedEventArgs e)
         {
             this.DataContext = new Order();
+            Container.Child = new MenuItemSelectionControl();//assuming a new order is going to be created after complete
         }
 
 

@@ -14,11 +14,11 @@ using System.Windows.Shapes;
 namespace PointOfSale
 {
     /// <summary>
-    /// Interaction logic for CustomizeSide.xaml
+    /// Interaction logic for CustomizeCornDodgers.xaml
     /// </summary>
-    public partial class CustomizeSide : UserControl
+    public partial class CustomizeCornDodgers : UserControl
     {
-        public CustomizeSide()
+        public CustomizeCornDodgers()
         {
             InitializeComponent();
         }

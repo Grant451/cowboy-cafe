@@ -119,22 +119,31 @@ namespace PointOfSale//CowboyCafe.PointOfSale
                         //sides:
                         case "ChiliCheeseFries":
                             var chiliCheeseFries = new ChiliCheeseFries();
-                            var chiliCheeseFriesCust = new CustomizeSide();
+                            var chiliCheeseFriesCust = new CustomizeChiliCheeseFries();
                             chiliCheeseFriesCust.DataContext = chiliCheeseFries;
                             order.Add(chiliCheeseFries);
                             orderControl.SwapScreen(chiliCheeseFriesCust);
                             break;
                         case "CornDodgers":
-                            order.Add(new CornDodgers());
-                            orderControl.SwapScreen(new CustomizeSide());
+                            var cornDodgers = new CornDodgers();
+                            var cornDodgersCust = new CustomizeCornDodgers();
+                            cornDodgersCust.DataContext = cornDodgers;
+                            order.Add(cornDodgers);
+                            orderControl.SwapScreen(cornDodgersCust);
                             break;
                         case "PanDeCampo":
-                            order.Add(new PanDeCampo());
-                            orderControl.SwapScreen(new CustomizeSide());
+                            var panDeCampo = new PanDeCampo();
+                            var panDeCampoCust = new CustomizePanDeCampo();
+                            panDeCampoCust.DataContext = panDeCampo;
+                            order.Add(panDeCampo);
+                            orderControl.SwapScreen(panDeCampoCust);
                             break;
                         case "BakedBeans":
-                            order.Add(new BakedBeans());
-                            orderControl.SwapScreen(new CustomizeSide());
+                            var bakedBeans = new BakedBeans();
+                            var bakedBeansCust = new CustomizeBakedBeans();
+                            bakedBeansCust.DataContext = bakedBeans;
+                            order.Add(bakedBeans);
+                            orderControl.SwapScreen(bakedBeansCust);
                             break;
                         //drinks:
                         case "JerkedSoda":
