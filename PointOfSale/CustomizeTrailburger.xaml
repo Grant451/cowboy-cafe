@@ -9,11 +9,36 @@
     <Grid>
         <StackPanel>
             <TextBlock FontSize="30" Text="Customize Trailburger"/>
-            <CheckBox IsChecked="{Binding Path=Bun}">Bun</CheckBox>
-            <CheckBox IsChecked="{Binding Path=Ketchup}">Ketchup</CheckBox>
-            <CheckBox IsChecked="{Binding Path=Cheese}">Cheese</CheckBox>
-            <CheckBox IsChecked="{Binding Path=Mustard}">mustard</CheckBox>
-            <CheckBox IsChecked="{Binding Path=Pickle}">Pickle</CheckBox>
+            <CheckBox IsChecked="{Binding Path=Bun}">
+                Bun
+                <CheckBox.LayoutTransform>
+                    <ScaleTransform ScaleX="3" ScaleY="3" />
+                </CheckBox.LayoutTransform>
+            </CheckBox>
+            <CheckBox IsChecked="{Binding Path=Ketchup}">
+                Ketchup
+                <CheckBox.LayoutTransform>
+                    <ScaleTransform ScaleX="3" ScaleY="3" />
+                </CheckBox.LayoutTransform>
+            </CheckBox>
+            <CheckBox IsChecked="{Binding Path=Cheese}">
+                Cheese
+                <CheckBox.LayoutTransform>
+                    <ScaleTransform ScaleX="3" ScaleY="3" />
+                </CheckBox.LayoutTransform>
+            </CheckBox>
+            <CheckBox IsChecked="{Binding Path=Mustard}">
+                mustard
+                <CheckBox.LayoutTransform>
+                    <ScaleTransform ScaleX="3" ScaleY="3" />
+                </CheckBox.LayoutTransform>
+            </CheckBox>
+            <CheckBox IsChecked="{Binding Path=Pickle}">
+                Pickle
+                <CheckBox.LayoutTransform>
+                    <ScaleTransform ScaleX="3" ScaleY="3" />
+                </CheckBox.LayoutTransform>
+            </CheckBox>
         </StackPanel>
     </Grid>
 </UserControl>

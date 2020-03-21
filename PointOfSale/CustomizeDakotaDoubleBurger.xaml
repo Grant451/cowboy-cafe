@@ -9,14 +9,54 @@
     <Grid>
         <StackPanel>
             <TextBlock FontSize="30" Text="Customize Dakota Double Burger"/>
-            <CheckBox IsChecked="{Binding Path=Bun}">Bun</CheckBox>
-            <CheckBox IsChecked="{Binding Path=Ketchup}">Ketchup</CheckBox>
-            <CheckBox IsChecked="{Binding Path=Cheese}">Cheese</CheckBox>
-            <CheckBox IsChecked="{Binding Path=Mustard}">Mustard</CheckBox>
-            <CheckBox IsChecked="{Binding Path=Pickle}">Pickle</CheckBox>
-            <CheckBox IsChecked="{Binding Path=Tomato}">Tomato</CheckBox>
-            <CheckBox IsChecked="{Binding Path=Lettuce}">Lettuce</CheckBox>
-            <CheckBox IsChecked="{Binding Path=Mayo}">Mayo</CheckBox>
+            <CheckBox IsChecked="{Binding Path=Bun}">
+                Bun
+                <CheckBox.LayoutTransform>
+                    <ScaleTransform ScaleX="3" ScaleY="3" />
+                </CheckBox.LayoutTransform>
+            </CheckBox>
+            <CheckBox IsChecked="{Binding Path=Ketchup}">
+                Ketchup
+                <CheckBox.LayoutTransform>
+                    <ScaleTransform ScaleX="3" ScaleY="3" />
+                </CheckBox.LayoutTransform>
+            </CheckBox>
+            <CheckBox IsChecked="{Binding Path=Cheese}">
+                Cheese
+                <CheckBox.LayoutTransform>
+                    <ScaleTransform ScaleX="3" ScaleY="3" />
+                </CheckBox.LayoutTransform>
+            </CheckBox>
+            <CheckBox IsChecked="{Binding Path=Mustard}">
+                Mustard
+                <CheckBox.LayoutTransform>
+                    <ScaleTransform ScaleX="3" ScaleY="3" />
+                </CheckBox.LayoutTransform>
+            </CheckBox>
+            <CheckBox IsChecked="{Binding Path=Pickle}">
+                Pickle
+                <CheckBox.LayoutTransform>
+                    <ScaleTransform ScaleX="3" ScaleY="3" />
+                </CheckBox.LayoutTransform>
+            </CheckBox>
+            <CheckBox IsChecked="{Binding Path=Tomato}">
+                Tomato
+                <CheckBox.LayoutTransform>
+                    <ScaleTransform ScaleX="3" ScaleY="3" />
+                </CheckBox.LayoutTransform>
+            </CheckBox>
+            <CheckBox IsChecked="{Binding Path=Lettuce}">
+                Lettuce
+                <CheckBox.LayoutTransform>
+                    <ScaleTransform ScaleX="3" ScaleY="3" />
+                </CheckBox.LayoutTransform>
+            </CheckBox>
+            <CheckBox IsChecked="{Binding Path=Mayo}">
+                Mayo
+                <CheckBox.LayoutTransform>
+                    <ScaleTransform ScaleX="3" ScaleY="3" />
+                </CheckBox.LayoutTransform>
+            </CheckBox>
         </StackPanel>
     </Grid>
 </UserControl>

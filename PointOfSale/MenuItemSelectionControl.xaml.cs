@@ -154,16 +154,25 @@ namespace PointOfSale//CowboyCafe.PointOfSale
                             orderControl.SwapScreen(jerkedSodaCust);
                             break;
                         case "TexasTea":
-                            order.Add(new TexasTea());
-                            orderControl.SwapScreen(new CustomizeTexasTea());
+                            var texasTea = new TexasTea();
+                            var texasTeaCust = new CustomizeTexasTea();
+                            texasTeaCust.DataContext = texasTea;
+                            order.Add(texasTea);
+                            orderControl.SwapScreen(texasTeaCust);
                             break;
                         case "CowboyCoffee":
-                            order.Add(new CowboyCoffee());
-                            orderControl.SwapScreen(new CustomizeCowboyCoffee());
+                            var cowboyCoffee = new CowboyCoffee();
+                            var cowboyCoffeeCust = new CustomizeCowboyCoffee();
+                            cowboyCoffeeCust.DataContext = cowboyCoffee;
+                            order.Add(cowboyCoffee);
+                            orderControl.SwapScreen(cowboyCoffeeCust);
                             break;
                         case "Water":
-                            order.Add(new Water());
-                            orderControl.SwapScreen(new CustomizeWater());
+                            var water = new Water();
+                            var waterCust = new CustomizeWater();
+                            waterCust.DataContext = water;
+                            order.Add(water);
+                            orderControl.SwapScreen(waterCust);
                             break;
                     }
                 }

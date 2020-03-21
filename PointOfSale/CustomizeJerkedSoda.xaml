@@ -27,16 +27,16 @@
     <Grid>
         <StackPanel Width="300">
             <TextBlock>Customize Jerked Soda</TextBlock>
-            
+
             <ListBox
             ItemsSource="{Binding Source={StaticResource flavorEnum}}"
             SelectedItem="{Binding Path=Flavor}"/>
-            
-            
+
+
             <ListBox
             ItemsSource="{Binding Source={StaticResource sizeEnum}}"
             SelectedItem="{Binding Path=Size}"/>
-            
+
             <CheckBox IsChecked="{Binding Path=Ice}">
                 Ice
                 <CheckBox.LayoutTransform>
@@ -45,19 +45,4 @@
             </CheckBox>
         </StackPanel>
     </Grid>
-
-    <!--<Grid>
-        <StackPanel>
-            <TextBlock FontSize="30" Text="Customize Jerked Soda"/>
-            <CheckBox IsChecked="{Binding Path=CreamSoda}">CreamSoda</CheckBox>
-            <CheckBox IsChecked="{Binding Path=OrangeSoda}">OrangeSoda</CheckBox>
-            <CheckBox IsChecked="{Binding Path=Sarsparilla}">Sarsparilla</CheckBox>
-            <CheckBox IsChecked="{Binding Path=BirchBeer}">BirchBeer</CheckBox>
-            <CheckBox IsChecked="{Binding Path=RootBeer}">RootBeer</CheckBox>
-            <CheckBox IsChecked="{Binding Path=Small}">Small</CheckBox>
-            <CheckBox IsChecked="{Binding Path=Meduim}">Meduim</CheckBox>
-            <CheckBox IsChecked="{Binding Path=Large}">Large</CheckBox>-->
-            <!--<CheckBox IsChecked="{Binding Path=Ice}">Ice</CheckBox>
-        </StackPanel>
-    </Grid>-->
 </UserControl>
