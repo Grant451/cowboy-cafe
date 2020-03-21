@@ -11,7 +11,8 @@ namespace CowboyCafe.Data
     public class CowpokeChili : Entree, INotifyPropertyChanged
     {
 
-        public event PropertyChangedEventHandler PropertyChanged;
+        //public event PropertyChangedEventHandler PropertyChanged;
+
         /// <summary>
         /// returns string name of Cowpokechili
         /// </summary>
@@ -121,11 +122,12 @@ namespace CowboyCafe.Data
             }
         }
 
-        private void NotifyOfPropertyChange(string propertyName)//protected only this class or a derived class can use this method
+        /*
+        private new void NotifyOfPropertyChange(string propertyName)//protected only this class or a derived class can use this method
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));//the ? is a null check
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
-        }
+        }*/
 
 
     }

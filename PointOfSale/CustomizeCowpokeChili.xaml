@@ -14,6 +14,6 @@
             <CheckBox IsChecked="{Binding Path=Cheese}">Cheese</CheckBox><!--was Path=cheese-->
             <CheckBox IsChecked="{Binding Path=TortillaStrips}">Tortilla Strips</CheckBox>
         </StackPanel>
-        <Button Click="EventChanged">Complete</Button>
+        <!--<Button Click="EventChanged">Complete</Button>-->
     </Grid>
 </UserControl>

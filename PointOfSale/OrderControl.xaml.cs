@@ -22,13 +22,13 @@ namespace PointOfSale
     /// </summary>
     public partial class OrderControl : UserControl
     {
-        Order first; //moved to menu selection control
+        Order first;
         public OrderControl()
         {
             InitializeComponent();
-            first = new Order();//moved to menu selection control
+            first = new Order();
             //set data context
-            DataContext = first;//moved to menu selection control
+            DataContext = first;
 
             //order creation/deletion buttions:
             ItemSelection.Click += ItemSelection_Click;
@@ -54,56 +54,7 @@ namespace PointOfSale
             Container.Child = new MenuItemSelectionControl();
         }
 
-
-
-        //taken out 3.13.2020
-        /*
-        public void ItemSelection_Click(object sender, RoutedEventArgs e)
-        {
-            var orderControl = this.FindAncestor<OrderControl>();
-            if (DataContext is Order order)
-            {
-                if (sender is Button button)
-                {
-                    switch (button.Tag)//***
-                    {
-                        case "CowpokeChili":
-                            order.Add(new CowpokeChili());
-                            orderControl.SwapScreen(new CustomizeCowpokeChili());
-                            break;
-
-                    }
-                }
-            }
-        }*/
-
-
-            /*
-            private void ItemSelection_Click(object sender, RoutedEventArgs e)
-            {
-                //first.Add(new CowpokeChili());
-                var orderControl = this.FindAncestor<OrderControl>();
-                if (DataContext is Order order)
-                {
-                    if (sender is Button button)
-                    {
-                        switch (button.Tag)
-                        {
-                            case "CowpokeChili":
-                                var entree = new CowpokeChili();
-                                var screen = new CustomizeCowpokeChili();
-                                screen.DataContext = entree;
-                                order.Add(entree);
-                                orderControl.SwapScreen(new CustomizeCowpokeChili());
-                                break;
-
-                        }
-                    }
-                }
-
-            }*/
-
-            //these go to order control.cs
+           
         private void CancelOrder_Click(object sender, RoutedEventArgs e)
         {
             this.DataContext = new Order();

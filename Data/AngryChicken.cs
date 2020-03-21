@@ -7,13 +7,14 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 
 namespace CowboyCafe.Data
 {
     /// <summary>
     /// a class representing the Angry Chicken
     /// </summary>
-    public class AngryChicken : Entree
+    public class AngryChicken : Entree, INotifyPropertyChanged
     {
         /// <summary>
         /// returns string name of Angry Chicken
@@ -90,5 +91,13 @@ namespace CowboyCafe.Data
                 return instructions;
             }
         }
+
+        /*
+        private new void NotifyOfPropertyChange(string propertyName)//protected only this class or a derived class can use this method
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));//the ? is a null check
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+        }*/
+
     }
 }

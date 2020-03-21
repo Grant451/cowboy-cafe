@@ -34,12 +34,8 @@
             <local:OrderSummaryControl/>
         </StackPanel>
 
-        <StackPanel Grid.Column="3" Grid.Row="1">
-            <local:sumtest/>
-        </StackPanel>
-        
 
-        
+
         <Border x:Name="Container" Grid.ColumnSpan="3" Grid.Row="1">
             <local:MenuItemSelectionControl></local:MenuItemSelectionControl>
         </Border> 

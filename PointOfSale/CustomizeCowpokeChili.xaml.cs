@@ -25,13 +25,14 @@ namespace PointOfSale
 
         }
 
+        /*
         private void EventChanged(object sender, RoutedEventArgs e)
         {
             var temp = this.FindAncestor<OrderControl>();
 
             if (temp is OrderControl) temp.NotifySpecialInstructions();
 
-        }
+        }*/
 
 
     }

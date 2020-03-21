@@ -34,6 +34,10 @@ namespace CowboyCafe.Data
         public abstract List<string> SpecialInstructions { get; }
 
         
+        /// <summary>
+        /// proposed implementation of property changed in the base class
+        /// </summary>
+        /// <param name="propertyName">the string of the change ex: "cheese"</param>
         protected void NotifyOfPropertyChange(string propertyName)//protected only this class or a derived class can use this method
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));//the ? is a null check
