@@ -34,7 +34,6 @@ namespace PointOfSale
             ItemSelection.Click += ItemSelection_Click;
             CancelOrder.Click += CancelOrder_Click;
             CompleteOrder.Click += CompleteOrder_Click;
-            //AddCowpokeChili.Click += AddCowpokeChili_Click;
 
         }
 

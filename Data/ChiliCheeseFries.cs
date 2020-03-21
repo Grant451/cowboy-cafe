@@ -7,13 +7,14 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 
 namespace CowboyCafe.Data
 {
     /// <summary>
     /// a class representing the chili cheese fries side
     /// </summary>
-    public class ChiliCheeseFries : Side
+    public class ChiliCheeseFries : Side, INotifyPropertyChanged
     {
         /// <summary>
         /// returns string name of Chili Cheese Fries

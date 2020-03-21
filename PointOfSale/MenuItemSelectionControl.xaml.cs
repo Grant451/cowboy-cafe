@@ -85,25 +85,43 @@ namespace PointOfSale//CowboyCafe.PointOfSale
                             orderControl.SwapScreen(chickenCust);
                             break;
                         case "TrailBurger":
-                            order.Add(new TrailBurger());
-                            orderControl.SwapScreen(new CustomizeTrailburger());
+                            var trailBurger = new TrailBurger();
+                            var trailBurgerCust = new CustomizeTrailburger();
+                            trailBurgerCust.DataContext = trailBurger;
+                            order.Add(trailBurger);
+                            orderControl.SwapScreen(trailBurgerCust);
                             break;
                         //RustlersRibs does not take a customization
+                        case "RustlersRibs":
+                            order.Add(new RustlersRibs());
+                            break;
                         case "PecosPulledPork":
-                            order.Add(new PecosPulledPork());
-                            orderControl.SwapScreen(new CustomizePecosPulledPork());
+                            var pecosPulledPork = new PecosPulledPork();
+                            var pecosPulledPorkCust = new CustomizePecosPulledPork();
+                            pecosPulledPorkCust.DataContext = pecosPulledPork;
+                            order.Add(pecosPulledPork);
+                            orderControl.SwapScreen(pecosPulledPorkCust);
                             break;
                         case "DakotaDoubleBurger":
-                            order.Add(new DakotaDoubleBurger());
-                            orderControl.SwapScreen(new CustomizeDakotaDoubleBurger());
+                            var dakotaDoubleBurger = new DakotaDoubleBurger();
+                            var dakotaDoubleBurgerCust = new CustomizeDakotaDoubleBurger();
+                            dakotaDoubleBurgerCust.DataContext = dakotaDoubleBurger;
+                            order.Add(dakotaDoubleBurger);
+                            orderControl.SwapScreen(dakotaDoubleBurgerCust);
                             break;
                         case "TexasTripleBurger":
-                            order.Add(new TexasTripleBurger());
-                            orderControl.SwapScreen(new CustomizeTexasTripleBurger());
+                            var texasTripleBurger = new TexasTripleBurger();
+                            var texasTripleBurgerCust = new CustomizeTexasTripleBurger();
+                            texasTripleBurgerCust.DataContext = texasTripleBurger;
+                            order.Add(texasTripleBurger);
+                            orderControl.SwapScreen(texasTripleBurgerCust);
                             break;
                         case "ChiliCheeseFries":
-                            order.Add(new ChiliCheeseFries());
-                            orderControl.SwapScreen(new CustomizeSide());
+                            var chiliCheeseFries = new ChiliCheeseFries();
+                            var chiliCheeseFriesCust = new CustomizeSide();
+                            chiliCheeseFriesCust.DataContext = chiliCheeseFries;
+                            order.Add(chiliCheeseFries);
+                            orderControl.SwapScreen(chiliCheeseFriesCust);
                             break;
                         case "CornDodgers":
                             order.Add(new CornDodgers());

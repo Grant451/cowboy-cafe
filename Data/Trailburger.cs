@@ -8,13 +8,14 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 
 namespace CowboyCafe.Data
 {
     /// <summary>
     /// a class representing the Trail burger
     /// </summary>
-    public class TrailBurger : Entree
+    public class TrailBurger : Entree, INotifyPropertyChanged
     {
         /// <summary>
         /// returns string name of Trail Burger

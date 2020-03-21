@@ -7,13 +7,14 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 
 namespace CowboyCafe.Data
 {
     /// <summary>
     /// a class representing the rustlers ribs
     /// </summary>
-    public class RustlersRibs : Entree
+    public class RustlersRibs : Entree, INotifyPropertyChanged
     {
         /// <summary>
         /// returns string name of Rustlers Ribs
