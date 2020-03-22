@@ -28,12 +28,12 @@
         <StackPanel Width="300">
             <TextBlock>Customize Jerked Soda</TextBlock>
 
-            <ListBox
+            <ListBox Height="200" FontSize="25"
             ItemsSource="{Binding Source={StaticResource flavorEnum}}"
             SelectedItem="{Binding Path=Flavor}"/>
 
 
-            <ListBox
+            <ListBox Height="125" FontSize="25"
             ItemsSource="{Binding Source={StaticResource sizeEnum}}"
             SelectedItem="{Binding Path=Size}"/>
 
