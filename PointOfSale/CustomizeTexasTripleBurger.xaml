@@ -60,8 +60,6 @@
                     <ScaleTransform ScaleX="3" ScaleY="3" />
                 </CheckBox.LayoutTransform>
             </CheckBox>
-
-            
         </StackPanel>
         <StackPanel Grid.Column="1">
         <CheckBox IsChecked="{Binding Path=Bacon}" Grid.Column="1">
