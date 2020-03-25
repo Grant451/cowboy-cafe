@@ -23,12 +23,20 @@
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition/>
                                 <ColumnDefinition/>
-                                <ColumnDefinition Width="100"/><!--was 25-->
+                                <ColumnDefinition/><!--Width="100"-->
+                                <ColumnDefinition/>
                             </Grid.ColumnDefinitions>
-                            <TextBlock Text="{Binding}" Grid.Column="0" />
+                            <TextBlock Name="theItem" Tag="onMenu" Text="{Binding}" Grid.Column="0" />
                             <TextBlock Text="     " Grid.Column="1"/>
-                            <!--<Button Name ="RemoveItem" Grid.Column="1" Click="OnRemoveItem">x</Button>-->
-                            <TextBlock Text="{Binding Path=Price}" Grid.Column="3"/><!--was col 1-->
+                            <!--
+                            <TextBlock Text="0" Grid.Column="0"/>
+                            <TextBlock Text="1" Grid.Column="1"/>
+                            <TextBlock Text="2" Grid.Column="2"/>
+                            <TextBlock Text="3" Grid.Column="3"/>
+                            <TextBlock Text="4" Grid.Column="4"/>
+                            -->
+                            <Button Name ="RemoveItem" Grid.Column="3" Click="OnRemoveItem" Width="25" Height="25">X</Button>
+                            <TextBlock Text="{Binding Path=Price}" Grid.Column="2"/><!--was col 1-->
                             <ListBox ItemsSource="{Binding Path=SpecialInstructions}" Grid.Column="1" Grid.Row="1"/>
                         </Grid>
                     </DataTemplate>
