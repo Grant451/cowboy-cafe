@@ -28,7 +28,7 @@ namespace PointOfSale//was PointOfSale
         {
             InitializeComponent();
             //ListOne.SelectionChanged += OnRemoveItem;
-            //ListOne.SelectionChanged += EditItem;
+            ListOne.SelectionChanged += EditItem;
         }
 
         /// <summary>
@@ -58,107 +58,107 @@ namespace PointOfSale//was PointOfSale
             var orderControl = this.FindAncestor<OrderControl>();
             if (DataContext is Order order)
             {
-                help.Text = ListOne.SelectedItem.ToString();
-
-                var temp = ListOne.SelectedItem.ToString();
-
-
-                switch (temp)
+                //help.Text = ListOne.SelectedItem.ToString();
+                if (ListOne.SelectedItem != null)
                 {
-                    case "Cowpoke Chili":
-                        var cow = (CustomizeCowpokeCili)ListOne.SelectedItem;//was (CowboyCafe.Data.CustomizeCowpokeCili)ListOne.SelectedItem;
-                        var cowCust = new CustomizeCowpokeChili();
-                        cowCust.DataContext = cow;
-                        orderControl.SwapScreen(cowCust);
-                        break;
-                    case "Angry Chicken":
-                        var chicken = (AngryChicken)ListOne.SelectedItem;
-                        var chickenCust = new CustomizeAngryChicken();
-                        chickenCust.DataContext = chicken;
-                        orderControl.SwapScreen(chickenCust);
-                        break;
-                    case "Trail Burger":
-                        var trailBurger = (TrailBurger)ListOne.SelectedItem;
-                        var trailBurgerCust = new CustomizeTrailburger();
-                        trailBurgerCust.DataContext = trailBurger;
-                        orderControl.SwapScreen(trailBurgerCust);
-                        break;
-                    //rustlers ribs does not take customizations
-                    case "Pecos Pulled Pork":
-                        var pecosPulledPork = (PecosPulledPork)ListOne.SelectedItem;
-                        var pecosPulledPorkCust = new CustomizePecosPulledPork();
-                        pecosPulledPorkCust.DataContext = pecosPulledPork;
-                        orderControl.SwapScreen(pecosPulledPorkCust);
-                        break;
-                    case "Dakota Double Burger":
-                        var dakotaDoubleBurger = (DakotaDoubleBurger)ListOne.SelectedItem;
-                        var dakotaDoubleBurgerCust = new CustomizeDakotaDoubleBurger();
-                        dakotaDoubleBurgerCust.DataContext = dakotaDoubleBurger;
-                        orderControl.SwapScreen(dakotaDoubleBurgerCust);
-                        break;
-                    case "Texas Triple Burger":
-                        var texasTripleBurger = (TexasTripleBurger)ListOne.SelectedItem;
-                        var texasTripleBurgerCust = new CustomizeTexasTripleBurger();
-                        texasTripleBurgerCust.DataContext = texasTripleBurger;
-                        orderControl.SwapScreen(texasTripleBurgerCust);
-                        break;
-                }
-                if(ListOne.SelectedItem.ToString().Contains("Chili Cheese Fries"))
-                {
-                    var chiliCheeseFries = (ChiliCheeseFries)ListOne.SelectedItem;
-                    var chiliCheeseFriesCust = new CustomizeChiliCheeseFries();
-                    chiliCheeseFriesCust.DataContext = chiliCheeseFries;
-                    orderControl.SwapScreen(chiliCheeseFriesCust);
-                }
-                if(temp.Contains("Corn Dodgers"))
-                {
-                    var cornDodgers = (CornDodgers)ListOne.SelectedItem;
-                    var cornDodgersCust = new CustomizeCornDodgers();
-                    cornDodgersCust.DataContext = cornDodgers;
-                    orderControl.SwapScreen(cornDodgersCust);
-                }
-                else if (temp.Contains("Pan de Campo"))
-                {
-                    var panDeCampo = (PanDeCampo)ListOne.SelectedItem;
-                    var panDeCampoCust = new CustomizePanDeCampo();
-                    panDeCampoCust.DataContext = panDeCampo;
-                    orderControl.SwapScreen(panDeCampoCust);
-                }
-                else if (temp.Contains("Baked Beans"))
-                {
-                    var bakedBeans = (BakedBeans)ListOne.SelectedItem;
-                    var bakedBeansCust = new CustomizeBakedBeans();
-                    bakedBeansCust.DataContext = bakedBeans;
-                    orderControl.SwapScreen(bakedBeansCust);
-                }
-                //drinks:
-                else if (temp.Contains("Jerked Soda"))
-                {
-                    var jerkedSoda = (JerkedSoda)ListOne.SelectedItem;
-                    var jerkedSodaCust = new CustomizeJerkedSoda();
-                    jerkedSodaCust.DataContext = jerkedSoda;
-                    orderControl.SwapScreen(jerkedSodaCust);
-                }
-                else if (temp.Contains("Tea"))
-                {
-                    var tea = (TexasTea)ListOne.SelectedItem;
-                    var teaCust = new CustomizeTexasTea();
-                    teaCust.DataContext = tea;
-                    orderControl.SwapScreen(teaCust);
-                }
-                else if (temp.Contains("Cowboy Coffee"))
-                {
-                    var cowboyCoffee = (CowboyCoffee)ListOne.SelectedItem;
-                    var cowboyCoffeeCust = new CustomizeCowboyCoffee();
-                    cowboyCoffeeCust.DataContext = cowboyCoffee;
-                    orderControl.SwapScreen(cowboyCoffeeCust);
-                }
-                else if (temp.Contains("Water"))
-                {
-                    var water = (Water)ListOne.SelectedItem;
-                    var waterCust = new CustomizeWater();
-                    waterCust.DataContext = water;
-                    orderControl.SwapScreen(waterCust);
+                    var temp = ListOne.SelectedItem.ToString();
+                    switch (temp)
+                    {
+                        case "Cowpoke Chili":
+                            var cow = (CustomizeCowpokeCili)ListOne.SelectedItem;//was (CowboyCafe.Data.CustomizeCowpokeCili)ListOne.SelectedItem;
+                            var cowCust = new CustomizeCowpokeChili();
+                            cowCust.DataContext = cow;
+                            orderControl.SwapScreen(cowCust);
+                            break;
+                        case "Angry Chicken":
+                            var chicken = (AngryChicken)ListOne.SelectedItem;
+                            var chickenCust = new CustomizeAngryChicken();
+                            chickenCust.DataContext = chicken;
+                            orderControl.SwapScreen(chickenCust);
+                            break;
+                        case "Trail Burger":
+                            var trailBurger = (TrailBurger)ListOne.SelectedItem;
+                            var trailBurgerCust = new CustomizeTrailburger();
+                            trailBurgerCust.DataContext = trailBurger;
+                            orderControl.SwapScreen(trailBurgerCust);
+                            break;
+                        //rustlers ribs does not take customizations
+                        case "Pecos Pulled Pork":
+                            var pecosPulledPork = (PecosPulledPork)ListOne.SelectedItem;
+                            var pecosPulledPorkCust = new CustomizePecosPulledPork();
+                            pecosPulledPorkCust.DataContext = pecosPulledPork;
+                            orderControl.SwapScreen(pecosPulledPorkCust);
+                            break;
+                        case "Dakota Double Burger":
+                            var dakotaDoubleBurger = (DakotaDoubleBurger)ListOne.SelectedItem;
+                            var dakotaDoubleBurgerCust = new CustomizeDakotaDoubleBurger();
+                            dakotaDoubleBurgerCust.DataContext = dakotaDoubleBurger;
+                            orderControl.SwapScreen(dakotaDoubleBurgerCust);
+                            break;
+                        case "Texas Triple Burger":
+                            var texasTripleBurger = (TexasTripleBurger)ListOne.SelectedItem;
+                            var texasTripleBurgerCust = new CustomizeTexasTripleBurger();
+                            texasTripleBurgerCust.DataContext = texasTripleBurger;
+                            orderControl.SwapScreen(texasTripleBurgerCust);
+                            break;
+                    }
+                    if (ListOne.SelectedItem.ToString().Contains("Chili Cheese Fries"))
+                    {
+                        var chiliCheeseFries = (ChiliCheeseFries)ListOne.SelectedItem;
+                        var chiliCheeseFriesCust = new CustomizeChiliCheeseFries();
+                        chiliCheeseFriesCust.DataContext = chiliCheeseFries;
+                        orderControl.SwapScreen(chiliCheeseFriesCust);
+                    }
+                    if (temp.Contains("Corn Dodgers"))
+                    {
+                        var cornDodgers = (CornDodgers)ListOne.SelectedItem;
+                        var cornDodgersCust = new CustomizeCornDodgers();
+                        cornDodgersCust.DataContext = cornDodgers;
+                        orderControl.SwapScreen(cornDodgersCust);
+                    }
+                    else if (temp.Contains("Pan de Campo"))
+                    {
+                        var panDeCampo = (PanDeCampo)ListOne.SelectedItem;
+                        var panDeCampoCust = new CustomizePanDeCampo();
+                        panDeCampoCust.DataContext = panDeCampo;
+                        orderControl.SwapScreen(panDeCampoCust);
+                    }
+                    else if (temp.Contains("Baked Beans"))
+                    {
+                        var bakedBeans = (BakedBeans)ListOne.SelectedItem;
+                        var bakedBeansCust = new CustomizeBakedBeans();
+                        bakedBeansCust.DataContext = bakedBeans;
+                        orderControl.SwapScreen(bakedBeansCust);
+                    }
+                    //drinks:
+                    else if (temp.Contains("Jerked Soda"))
+                    {
+                        var jerkedSoda = (JerkedSoda)ListOne.SelectedItem;
+                        var jerkedSodaCust = new CustomizeJerkedSoda();
+                        jerkedSodaCust.DataContext = jerkedSoda;
+                        orderControl.SwapScreen(jerkedSodaCust);
+                    }
+                    else if (temp.Contains("Tea"))
+                    {
+                        var tea = (TexasTea)ListOne.SelectedItem;
+                        var teaCust = new CustomizeTexasTea();
+                        teaCust.DataContext = tea;
+                        orderControl.SwapScreen(teaCust);
+                    }
+                    else if (temp.Contains("Cowboy Coffee"))
+                    {
+                        var cowboyCoffee = (CowboyCoffee)ListOne.SelectedItem;
+                        var cowboyCoffeeCust = new CustomizeCowboyCoffee();
+                        cowboyCoffeeCust.DataContext = cowboyCoffee;
+                        orderControl.SwapScreen(cowboyCoffeeCust);
+                    }
+                    else if (temp.Contains("Water"))
+                    {
+                        var water = (Water)ListOne.SelectedItem;
+                        var waterCust = new CustomizeWater();
+                        waterCust.DataContext = water;
+                        orderControl.SwapScreen(waterCust);
+                    }
                 }
             }
             
