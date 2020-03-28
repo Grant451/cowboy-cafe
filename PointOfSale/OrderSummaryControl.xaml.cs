@@ -41,7 +41,7 @@ namespace PointOfSale//was PointOfSale
             var orderControl = this.FindAncestor<OrderControl>();
             if (DataContext is Order order)
             {
-                //CowboyCafe.Data.IOrderItem temp = (CowboyCafe.Data.IOrderItem)ListOne.SelectedItem;//stoped working
+                //CowboyCafe.Data.IOrderItem temp = (CowboyCafe.Data.IOrderItem)ListOne.SelectedItem;//stoped working???
                 CowboyCafe.Data.CustomizeCowpokeCili temp = (CowboyCafe.Data.CustomizeCowpokeCili)ListOne.SelectedItem;
                 order.Remove(temp);
                 orderControl.SwapScreen(new MenuItemSelectionControl());
