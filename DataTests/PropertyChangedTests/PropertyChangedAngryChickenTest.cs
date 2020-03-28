@@ -5,11 +5,10 @@ using Xunit;
 using System.ComponentModel;
 using CowboyCafe.Data;
 
-namespace CowboyCafe.DataTests
+namespace CowboyCafe.DataTests.PropertyChangedTests
 {
-    public class PropertyChangedTests
+    public class PropertyChangedAngryChickenTest
     {
-
         //test1 make sure it implements the inotifypropertyInterface
         [Fact]
         public void AngryChickenShouldImplementInotifyPropertyChanged()
@@ -51,7 +50,7 @@ namespace CowboyCafe.DataTests
 
         }
 
-        
+
         [Fact]
         public void ChangingPickleShouldInvokePropertyChangedForSpecialInstructions()
         {

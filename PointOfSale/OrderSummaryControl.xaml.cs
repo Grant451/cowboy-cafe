@@ -12,8 +12,6 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using CowboyCafe.Data;//added 3.25
 using CowboyCafe.ExtensionMethods;//added 3.27
-//using CowboyCafe.Data;//added 3.11
-//using CowboyCafe.ExtensionMethods;//added 3.11
 
 
 

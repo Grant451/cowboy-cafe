@@ -36,7 +36,7 @@ namespace CowboyCafe.Data
             {
                 bread = value;
                 NotifyOfPropertyChange("Bread");
-                //NotifyOfPropertyChange("SpecialInstructions");
+                //NotifyOfPropertyChange("SpecialInstructions");//might need this
             }
         }
         //public bool Bread {get; set;} = true;
