@@ -72,10 +72,12 @@ namespace PointOfSale//CowboyCafe.PointOfSale
                     {
                         case "CowpokeChili":
                             var cow = new CowpokeChili();
+                            
                             var cowCust = new CustomizeCowpokeChili();
                             cowCust.DataContext = cow;
                             order.Add(cow);
                             orderControl.SwapScreen(cowCust);
+                            
                             break;
                         case "AngryChicken":
                             var chicken = new AngryChicken();

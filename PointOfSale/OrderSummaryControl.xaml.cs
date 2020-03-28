@@ -11,6 +11,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using CowboyCafe.Data;//added 3.25
+using CowboyCafe.ExtensionMethods;//added 3.27
 //using CowboyCafe.Data;//added 3.11
 //using CowboyCafe.ExtensionMethods;//added 3.11
 
@@ -26,7 +27,6 @@ namespace PointOfSale//was PointOfSale
         public OrderSummaryControl()
         {
             InitializeComponent();
-            //theItem.Click += Test;
         }
 
         /// <summary>
@@ -36,10 +36,20 @@ namespace PointOfSale//was PointOfSale
         /// <param name="e">the event args</param>
         public void OnRemoveItem(object sender, RoutedEventArgs e)
         {
-            /*
-            items.Remove(item);
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Items"));
-            */
+            var orderControl = ListOne.DataContext;//this.FindAncestor<OrderControl>();
+            if (DataContext is Order order)
+            {
+                //I need to link the 0 the the number that the item is in the list
+                CowboyCafe.Data.IOrderItem temp = (CowboyCafe.Data.IOrderItem)ListOne.Items[0];
+                order.Remove(temp);
+                /*
+                if (sender is Button button)
+                {
+                    help.Text = button.Tag.ToString();
+                }
+                */
+            }
+            
         }
 
         /// <summary>
@@ -50,8 +60,7 @@ namespace PointOfSale//was PointOfSale
         /// <param name="e">the event args</param>
         public void Test(object sender, RoutedEventArgs e)
         {
-            //var orderControl = this.FindAncestor<OrderControl>();
-            
+            var orderControl = this.FindAncestor<OrderControl>();
             if (DataContext is Order order)
             {
                 if (sender is Button button)
@@ -59,6 +68,11 @@ namespace PointOfSale//was PointOfSale
                     switch (button.Tag)
                     {
                         case "CowpokeChili":
+                            var cow = new CowpokeChili();
+                            var cowCust = new CustomizeCowpokeChili();
+                            cowCust.DataContext = cow;
+                            order.Remove(cow);
+                            orderControl.SwapScreen(cowCust);
                             break;
                     }
                 }
