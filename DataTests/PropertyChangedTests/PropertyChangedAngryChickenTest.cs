@@ -40,7 +40,7 @@ namespace CowboyCafe.DataTests.PropertyChangedTests
         }
 
         [Fact]
-        public void ChangingPickleShouldInvokePropertyChangedForBread()
+        public void ChangingPickleShouldInvokePropertyChangedForPickle()
         {
             var chicken = new AngryChicken();
             Assert.PropertyChanged(chicken, "Pickle", () =>

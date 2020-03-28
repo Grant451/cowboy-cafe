@@ -18,19 +18,7 @@ namespace CowboyCafe.Data
         /// </summary>
         /// <returns></returns>
         public override string ToString()
-        {/*
-            switch (Size)
-            {
-                case Size.Small:
-                    return string.Format("Small {0} Jerked Soda", flavor); //the calories
-                case Size.Medium:
-                    return string.Format("Medium {0} Jerked Soda", flavor);
-                case Size.Large:
-                    return string.Format("Large {0} Jerked Soda", flavor);
-                default:
-                    throw new NotImplementedException();
-            }
-            */
+        {
             
 
             switch (flavor)
