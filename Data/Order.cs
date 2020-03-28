@@ -26,7 +26,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// a backing list that holds the items in the order
         /// </summary>
-        private List<IOrderItem> items = new List<IOrderItem>();
+        private List<CustomizeCowpokeCili> items = new List<CustomizeCowpokeCili>();
 
 
         public Order()
@@ -48,7 +48,7 @@ namespace CowboyCafe.Data
         public IEnumerable<IOrderItem> Items => items;//PropertyChangedEventHandler();//{ get; }//=> throw new NotImplementedException();
         */
 
-        public IEnumerable<IOrderItem> Items
+        public IEnumerable<CustomizeCowpokeCili> Items
         {
             get
             { 
@@ -65,7 +65,7 @@ namespace CowboyCafe.Data
             get
             {
                 double total = 0;
-                foreach (IOrderItem x in items)
+                foreach (CustomizeCowpokeCili x in items)
                 {
                     total += x.Price;
                 }
@@ -92,14 +92,13 @@ namespace CowboyCafe.Data
         /// adds an item to itmes
         /// </summary>
         /// <param name="item">the backing variable for the order</param>
-        public void Add(IOrderItem item) 
+        public void Add(CustomizeCowpokeCili item) 
         {
             if(item is INotifyPropertyChanged notifier)
             {
                 notifier.PropertyChanged += OnItemPropertyChanged;
             }
             items.Add(item);
-            items.Count.ToString();
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Items"));//was Items
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("OrderNumber"));
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
@@ -112,7 +111,7 @@ namespace CowboyCafe.Data
         /// removes an item from items
         /// </summary>
         /// <param name="item">the backing variable for the order</param>
-        public void Remove(IOrderItem item) 
+        public void Remove(CustomizeCowpokeCili item) 
         {
             if(item is INotifyPropertyChanged notifier)
             {

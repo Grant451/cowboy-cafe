@@ -73,7 +73,6 @@ namespace PointOfSale//CowboyCafe.PointOfSale
                     {
                         case "CowpokeChili":
                             var cow = new CowpokeChili();
-                            
                             var cowCust = new CustomizeCowpokeChili();
                             cowCust.DataContext = cow;
                             order.Add(cow);
@@ -182,24 +181,37 @@ namespace PointOfSale//CowboyCafe.PointOfSale
             }
         }
 
-        /*
-        //this stays
-        void AddItemAndOpenCustomizationScreen(IOrderItem item, FrameworkElement screen)
+        public void AutoFillItems(object sender, RoutedEventArgs e)
         {
-            var order = DataContext as Order;
-            if(order == null) throw new Exception("DataContext expected to be an Order instance");
-
-            if(screen != null)
+            var orderControl = this.FindAncestor<OrderControl>();
+            if (DataContext is Order order)
             {
-                var orderControl = this.FindAncestor<OrderControl>();
-                if (orderControl == null) throw new Exception("An ancestor of ordercontrol...");
+                var cow = new CowpokeChili();
+                var cowCust = new CustomizeCowpokeChili();
+                cowCust.DataContext = cow;
+                order.Add(cow);
+                orderControl.SwapScreen(cowCust);
 
-                screen.DataContext = item;
-                orderControl.SwapScreen(screen);
+                var pecosPulledPork = new PecosPulledPork();
+                var pecosPulledPorkCust = new CustomizePecosPulledPork();
+                pecosPulledPorkCust.DataContext = pecosPulledPork;
+                order.Add(pecosPulledPork);
+                orderControl.SwapScreen(pecosPulledPorkCust);
+
+                var jerkedSoda = new JerkedSoda();
+                var jerkedSodaCust = new CustomizeJerkedSoda();
+                jerkedSodaCust.DataContext = jerkedSoda;
+                order.Add(jerkedSoda);
+                orderControl.SwapScreen(jerkedSodaCust);
+
+                var second = new CowpokeChili();
+                var secondCust = new CustomizeCowpokeChili();
+                secondCust.DataContext = second;
+                order.Add(second);
+                orderControl.SwapScreen(secondCust);
             }
 
-            order.Add(item);
-        }*/
+        }
 
 
         

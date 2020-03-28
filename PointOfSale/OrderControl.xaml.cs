@@ -66,13 +66,6 @@ namespace PointOfSale
             Container.Child = new MenuItemSelectionControl();//assuming a new order is going to be created after complete
         }
 
-        /*
-        public void NotifySpecialInstructions()
-        {
-            if (DataContext is Order order) order.NotifyChange();
-        }
-        */
-
 
     }
 }

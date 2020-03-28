@@ -38,6 +38,7 @@
             <Button Name ="AddTexasTea" Tag="TexasTea">Texas Tea</Button>
             <Button Name="AddCowboyCoffee" Tag="CowboyCoffee">Cowboy Coffee</Button>
             <Button Name="AddWater" Tag="Water">Water</Button>
+            <Button Click="AutoFillItems">autofill</Button>
         </StackPanel>
     </Grid>
 </UserControl>

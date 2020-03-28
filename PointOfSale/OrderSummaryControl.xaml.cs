@@ -27,6 +27,8 @@ namespace PointOfSale//was PointOfSale
         public OrderSummaryControl()
         {
             InitializeComponent();
+            //ListOne.SelectionChanged += OnRemoveItem;
+            //ListOne.SelectionChanged += EditItem;
         }
 
         /// <summary>
@@ -38,38 +40,47 @@ namespace PointOfSale//was PointOfSale
         {
             if (DataContext is Order order)
             {
-                CowboyCafe.Data.IOrderItem temp = (CowboyCafe.Data.IOrderItem)ListOne.SelectedItem;
+                //CowboyCafe.Data.IOrderItem temp = (CowboyCafe.Data.IOrderItem)ListOne.SelectedItem;//stoped working
+                CowboyCafe.Data.CustomizeCowpokeCili temp = (CowboyCafe.Data.CustomizeCowpokeCili)ListOne.SelectedItem;
                 order.Remove(temp);
             }
-                
         }
 
+        
         /// <summary>
         /// brings up the same instance that was first used to create the item.
         /// (thus an item can be edited)
         /// </summary>
         /// <param name="sender">the button clicked</param>
         /// <param name="e">the event args</param>
-        public void Test(object sender, RoutedEventArgs e)
+        public void EditItem(object sender, RoutedEventArgs e)
         {
             var orderControl = this.FindAncestor<OrderControl>();
             if (DataContext is Order order)
             {
-                if (sender is Button button)
+                help.Text = ListOne.SelectedItem.ToString();
+
+
+                
+                switch(ListOne.SelectedItem.ToString())
                 {
-                    switch (button.Tag)
-                    {
-                        case "CowpokeChili":
-                            var cow = new CowpokeChili();
-                            var cowCust = new CustomizeCowpokeChili();
-                            cowCust.DataContext = cow;
-                            order.Remove(cow);
-                            orderControl.SwapScreen(cowCust);
-                            break;
-                    }
+                    case "Cowpoke Chili":
+                        var cow = (CustomizeCowpokeCili)ListOne.SelectedItem;//was (CowboyCafe.Data.CustomizeCowpokeCili)ListOne.SelectedItem;
+                        var cowCust = new CustomizeCowpokeChili();
+                        cowCust.DataContext = cow;
+                        orderControl.SwapScreen(cowCust);
+                        break;
+                    case "Angry Chicken":
+                        var chicken = (CustomizeCowpokeCili)ListOne.SelectedItem;
+                        var chickenCust = new CustomizeAngryChicken();
+                        chickenCust.DataContext = chicken;
+                        orderControl.SwapScreen(chickenCust);
+                        break;
                 }
+                
             }
             
         }
+        
     }
 }

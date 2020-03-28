@@ -9,7 +9,7 @@ namespace CowboyCafe.Data
     /// <summary>
     /// A base class representing a side
     /// </summary>
-    public abstract class Side : IOrderItem, INotifyPropertyChanged
+    public abstract class Side : CustomizeCowpokeCili, INotifyPropertyChanged
     {
         /// <summary>
         /// property changed event handler

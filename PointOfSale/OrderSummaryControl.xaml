@@ -25,6 +25,7 @@
                                 <ColumnDefinition/>
                                 <ColumnDefinition/><!--Width="100"-->
                                 <ColumnDefinition/>
+                                <ColumnDefinition/>
                             </Grid.ColumnDefinitions>
                             <TextBlock Name="theItem" Tag="onMenu" Text="{Binding}" Grid.Column="0" />
                             <TextBlock Text="     " Grid.Column="1"/>
@@ -37,6 +38,7 @@
                             -->
                             <Button Name ="RemoveItem" Grid.Column="3" Click="OnRemoveItem" Width="25" Height="25" Content="X"/>
                             <!--RemoveItem-->
+                            <Button Name ="Edit" Grid.Column="4" Click="EditItem" Width="50" Height="25" Content="Edit"/>
                             <TextBlock Text="{Binding Path=Price}" Grid.Column="2"/>
                             <ListBox ItemsSource="{Binding Path=SpecialInstructions}" Grid.Column="1" Grid.Row="1"/>
                         </Grid>

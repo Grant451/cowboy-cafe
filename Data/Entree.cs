@@ -14,7 +14,7 @@ namespace CowboyCafe.Data
     /// <summary>
     /// an abstract base class for all the entrees
     /// </summary>
-    public abstract class Entree : IOrderItem//, INotifyPropertyChanged//InotifyPropertyChanged
+    public abstract class Entree : CustomizeCowpokeCili//, INotifyPropertyChanged//InotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
 

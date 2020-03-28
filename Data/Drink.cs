@@ -11,7 +11,7 @@ using System.ComponentModel;
 
 namespace CowboyCafe.Data
 {
-    public abstract class Drink : IOrderItem, INotifyPropertyChanged
+    public abstract class Drink : CustomizeCowpokeCili, INotifyPropertyChanged
     {
 
         public event PropertyChangedEventHandler PropertyChanged;
