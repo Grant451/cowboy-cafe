@@ -35,7 +35,7 @@
                             <TextBlock Text="3" Grid.Column="3"/>
                             <TextBlock Text="4" Grid.Column="4"/>
                             -->
-                            <Button Name ="RemoveItem" Grid.Column="3" Click="OnRemoveItem" Tag="{Binding Path=OrderNumber}" Width="25" Height="25" Content="X"/>
+                            <Button Name ="RemoveItem" Grid.Column="3" Click="OnRemoveItem" Width="25" Height="25" Content="X"/>
                             <!--RemoveItem-->
                             <TextBlock Text="{Binding Path=Price}" Grid.Column="2"/>
                             <ListBox ItemsSource="{Binding Path=SpecialInstructions}" Grid.Column="1" Grid.Row="1"/>

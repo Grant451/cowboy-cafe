@@ -36,20 +36,12 @@ namespace PointOfSale//was PointOfSale
         /// <param name="e">the event args</param>
         public void OnRemoveItem(object sender, RoutedEventArgs e)
         {
-            var orderControl = ListOne.DataContext;//this.FindAncestor<OrderControl>();
             if (DataContext is Order order)
             {
-                //I need to link the 0 the the number that the item is in the list
-                CowboyCafe.Data.IOrderItem temp = (CowboyCafe.Data.IOrderItem)ListOne.Items[0];
+                CowboyCafe.Data.IOrderItem temp = (CowboyCafe.Data.IOrderItem)ListOne.SelectedItem;
                 order.Remove(temp);
-                /*
-                if (sender is Button button)
-                {
-                    help.Text = button.Tag.ToString();
-                }
-                */
             }
-            
+                
         }
 
         /// <summary>

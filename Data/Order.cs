@@ -99,6 +99,7 @@ namespace CowboyCafe.Data
                 notifier.PropertyChanged += OnItemPropertyChanged;
             }
             items.Add(item);
+            items.Count.ToString();
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Items"));//was Items
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("OrderNumber"));
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));

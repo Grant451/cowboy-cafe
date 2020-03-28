@@ -51,6 +51,7 @@ namespace PointOfSale//CowboyCafe.PointOfSale
             AddTexasTea.Click += itemAddTest;
             AddCowboyCoffee.Click += itemAddTest;
             AddWater.Click += itemAddTest;
+            
 
             
         }
