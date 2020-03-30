@@ -181,6 +181,8 @@ namespace PointOfSale//CowboyCafe.PointOfSale
             }
         }
 
+        //used to debug:
+        /*
         public void AutoFillItems(object sender, RoutedEventArgs e)
         {
             var orderControl = this.FindAncestor<OrderControl>();
@@ -212,6 +214,7 @@ namespace PointOfSale//CowboyCafe.PointOfSale
             }
 
         }
+        */
 
 
         

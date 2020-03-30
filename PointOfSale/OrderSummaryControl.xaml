@@ -12,7 +12,7 @@
             <TextBox Text="{Binding Path=OrderNumber}"/>
             <!--<TextBox Text="{Binding Path=OrderNumber, StringFormat=c}" TextAlignment="Left"/>-->
             <TextBlock>items:</TextBlock>
-            <ListBox ItemsSource="{Binding Path=Items}" Height="400" Name="ListOne"><!--height was 600-->
+            <ListBox ItemsSource="{Binding Path=Items}" Height="600" Name="ListOne"><!--height was 600-->
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <Grid>
