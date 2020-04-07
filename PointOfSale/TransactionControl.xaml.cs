@@ -27,9 +27,15 @@ namespace PointOfSale
     /// </summary>
     public partial class TransactionControl : UserControl
     {
-        public TransactionControl()
+        public TransactionControl(Order temp)
         {
             InitializeComponent();
+            //set the necessary order properties 
+            FinalPrice = Math.Round((temp.Subtotal += temp.Subtotal * .16), 2);
+            items = temp.Items;
+            OrderNumber = temp.OrderNumber;
+            Subtotal = temp.Subtotal;
+
             //GetSubtotal();
             FinalPriceDisp.Text = FinalPrice.ToString();
             //the buttons on the form:
@@ -38,14 +44,32 @@ namespace PointOfSale
             PayByCredit.Click += OnPayByCredit;
         }
 
-        public double FinalPrice = 19.2;
+        private double Subtotal;
+
+        public double FinalPrice;
+
+        private uint OrderNumber;
+
+        private IEnumerable<IOrderItem> items;
+
 
         /*
-        public void GetSubtotal(object sender, RoutedEventArgs e)
+        public void setFinalPrice()
         {
+            
+            var orderControl = this.FindAncestor<OrderControl>();
+            if (DataContext is Order order)
+            {
+                var temp = order.Subtotal;
+                FinalPrice = temp += temp * .16;
+                FinalPriceDisp.Text = FinalPrice.ToString();
+            }
+            
+
 
         }
         */
+
 
         void OnPayByCredit(object sender, RoutedEventArgs e)
         {
@@ -54,10 +78,8 @@ namespace PointOfSale
             var result = Card.ProcessTransaction(FinalPrice).ToString();
             if(result == "Success")
             {
-                //print the receipt
-                var receipt = new ReceiptPrinter();
-                //receipt.Print();
-
+                //print receipt
+                CreateReciept(true, 0, 0);
                 //start a new order:
                 orderControl.ChangeMode(new OrderSummaryControl());
                 orderControl.SwapScreen(new MenuItemSelectionControl());
@@ -76,14 +98,11 @@ namespace PointOfSale
 
 
             //print the receipt
-            var receipt = new ReceiptPrinter();
-            //receipt.Print(orderControl);
+            //CreateReciept();
 
-            /*
             //start a new order:
             orderControl.ChangeMode(new OrderSummaryControl());
             orderControl.SwapScreen(new MenuItemSelectionControl());
-            */
         }
 
         void OnCancelTransaction(object sender, RoutedEventArgs e)
@@ -94,7 +113,40 @@ namespace PointOfSale
             orderControl.SwapScreen(new MenuItemSelectionControl());
         }
 
-        
+        private void CreateReciept(bool credit, double total, double change)
+        {
+            //print the receipt
+            var receipt = new ReceiptPrinter();
+            receipt.Print("OrderNumber:");
+            receipt.Print(OrderNumber.ToString());
+
+            receipt.Print(DateTime.Now.ToString());
+
+            foreach (IOrderItem x in items)
+            {
+                receipt.Print(x.ToString());
+                foreach (string a in x.SpecialInstructions)
+                {
+                    receipt.Print(a);
+                }
+                receipt.Print(x.Price.ToString());
+            }
+            receipt.Print("Subtotal:");
+            receipt.Print(Subtotal.ToString());
+            receipt.Print("Total with Tax:");
+            receipt.Print(FinalPrice.ToString());
+            if(credit)
+            {
+                receipt.Print("Credit");
+            }
+            else
+            {
+                receipt.Print("Total paid:");
+                receipt.Print(total.ToString());
+                receipt.Print("Change:");
+                receipt.Print(change.ToString());
+            }
+        }
 
     }
 }

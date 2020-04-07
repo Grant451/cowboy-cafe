@@ -69,11 +69,19 @@ namespace PointOfSale
         private void CompleteOrder_Click(object sender, RoutedEventArgs e)
         {
             //this.DataContext = new Order();this should only be advanced when the previous order is completed (moved to changemode)
-            FinalizationArea.Child = new TransactionControl();
+            Container.Child = null;//so that the order cannot be changed while it is in transaction control
+            FinalizationArea.Child = new TransactionControl(first);
             //this is now handled in the transaction control cs:
             //Container.Child = new MenuItemSelectionControl();//assuming a new order is going to be created after complete
         }
 
+
+        /*
+        public double GetSubtotal()
+        {
+            return first.Subtotal;
+        }
+        */
 
     }
 }

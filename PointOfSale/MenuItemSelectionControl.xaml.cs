@@ -77,7 +77,6 @@ namespace PointOfSale//CowboyCafe.PointOfSale
                             cowCust.DataContext = cow;
                             order.Add(cow);
                             orderControl.SwapScreen(cowCust);
-                            
                             break;
                         case "AngryChicken":
                             var chicken = new AngryChicken();
