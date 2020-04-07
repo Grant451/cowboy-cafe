@@ -43,6 +43,12 @@ namespace PointOfSale
             Container.Child = element;
         }
 
+        public void ChangeMode(UIElement element)
+        {
+            FinalizationArea.Child = element;
+            this.DataContext = new Order();
+        }
+
         /// <summary>
         /// switch the screen back to menuitemselection when clicked
         /// </summary>
@@ -62,8 +68,10 @@ namespace PointOfSale
 
         private void CompleteOrder_Click(object sender, RoutedEventArgs e)
         {
-            this.DataContext = new Order();
-            Container.Child = new MenuItemSelectionControl();//assuming a new order is going to be created after complete
+            //this.DataContext = new Order();this should only be advanced when the previous order is completed (moved to changemode)
+            FinalizationArea.Child = new TransactionControl();
+            //this is now handled in the transaction control cs:
+            //Container.Child = new MenuItemSelectionControl();//assuming a new order is going to be created after complete
         }
 
 
