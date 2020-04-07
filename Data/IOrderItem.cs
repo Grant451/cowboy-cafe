@@ -7,7 +7,7 @@ namespace CowboyCafe.Data
     /// <summary>
     /// An interface representing a single item in an order
     /// </summary>
-    public interface CustomizeCowpokeCili
+    public interface IOrderItem
     {
        /// <summary>
        /// the price of an order item

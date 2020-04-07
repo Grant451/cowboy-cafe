@@ -7,7 +7,7 @@ using System.Linq;
 
 namespace CowboyCafe.DataTests
 {
-    class MockOrderItem : CustomizeCowpokeCili
+    class MockOrderItem : IOrderItem
     {
         public double Price { get; set; }
 
@@ -63,7 +63,7 @@ namespace CowboyCafe.DataTests
         [Fact]
         public void ItemsShouldContainOnlyAddedItems()
         {
-            var items = new CustomizeCowpokeCili[]
+            var items = new IOrderItem[]
             {
                 new MockOrderItem() {Price = 3},
                 new MockOrderItem() {Price = 4},

@@ -26,7 +26,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// a backing list that holds the items in the order
         /// </summary>
-        private List<CustomizeCowpokeCili> items = new List<CustomizeCowpokeCili>();
+        private List<IOrderItem> items = new List<IOrderItem>();
 
 
         public Order()
@@ -48,7 +48,7 @@ namespace CowboyCafe.Data
         public IEnumerable<IOrderItem> Items => items;//PropertyChangedEventHandler();//{ get; }//=> throw new NotImplementedException();
         */
 
-        public IEnumerable<CustomizeCowpokeCili> Items
+        public IEnumerable<IOrderItem> Items
         {
             get
             { 
@@ -65,7 +65,7 @@ namespace CowboyCafe.Data
             get
             {
                 double total = 0;
-                foreach (CustomizeCowpokeCili x in items)
+                foreach (IOrderItem x in items)
                 {
                     total += x.Price;
                 }
@@ -92,7 +92,7 @@ namespace CowboyCafe.Data
         /// adds an item to itmes
         /// </summary>
         /// <param name="item">the backing variable for the order</param>
-        public void Add(CustomizeCowpokeCili item) 
+        public void Add(IOrderItem item) 
         {
             if(item is INotifyPropertyChanged notifier)
             {
@@ -111,7 +111,7 @@ namespace CowboyCafe.Data
         /// removes an item from items
         /// </summary>
         /// <param name="item">the backing variable for the order</param>
-        public void Remove(CustomizeCowpokeCili item) 
+        public void Remove(IOrderItem item) 
         {
             if(item is INotifyPropertyChanged notifier)
             {
