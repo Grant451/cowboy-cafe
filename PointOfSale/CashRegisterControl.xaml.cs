@@ -10,6 +10,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using CowboyCafe.ExtensionMethods;
 
 namespace PointOfSale
 {
@@ -21,6 +22,15 @@ namespace PointOfSale
         public CashRegisterControl()
         {
             InitializeComponent();
+            FinishCashPayment.Click += FlipOrder;
+        }
+
+        public void FlipOrder(object sender, RoutedEventArgs e)
+        {
+            var orderControl = this.FindAncestor<OrderControl>();
+            orderControl.ChangeMode(new OrderSummaryControl());
+            orderControl.SwapScreen(new MenuItemSelectionControl());
+            
         }
 
         //public double total = 0;

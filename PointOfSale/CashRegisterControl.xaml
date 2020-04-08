@@ -14,7 +14,8 @@
         </Grid.RowDefinitions>
         <StackPanel Grid.Row="3">
             <TextBlock >total inserted:</TextBlock>
-            <TextBox Name="Cashtotal"  Height="20" Width="75" HorizontalAlignment="Left"></TextBox>
+            <TextBox Name="Cashtotal"  Height="20" Width="75" HorizontalAlignment="Left" Text="{Binding Path=TotalValue}"></TextBox>
+            <Button Name="FinishCashPayment" Width="200" Height="25" HorizontalAlignment="Left">Finish cash payment</Button>
         </StackPanel>
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Bottom">
 

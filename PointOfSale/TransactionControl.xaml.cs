@@ -53,22 +53,6 @@ namespace PointOfSale
         private IEnumerable<IOrderItem> items;
 
 
-        /*
-        public void setFinalPrice()
-        {
-            
-            var orderControl = this.FindAncestor<OrderControl>();
-            if (DataContext is Order order)
-            {
-                var temp = order.Subtotal;
-                FinalPrice = temp += temp * .16;
-                FinalPriceDisp.Text = FinalPrice.ToString();
-            }
-            
-
-
-        }
-        */
 
 
         void OnPayByCredit(object sender, RoutedEventArgs e)
@@ -98,11 +82,16 @@ namespace PointOfSale
 
 
             //print the receipt
-            //CreateReciept();
+            double TotalPaid=0;
+            double change=0;
 
-            //start a new order:
-            orderControl.ChangeMode(new OrderSummaryControl());
-            orderControl.SwapScreen(new MenuItemSelectionControl());
+            //logic for taking the cash payments:
+
+            CreateReciept(false, TotalPaid, change);
+
+            //start a new order by clicking finish cash payment
+            
+            
         }
 
         void OnCancelTransaction(object sender, RoutedEventArgs e)

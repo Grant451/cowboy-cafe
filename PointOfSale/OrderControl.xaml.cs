@@ -64,6 +64,7 @@ namespace PointOfSale
         {
             this.DataContext = new Order();
             Container.Child = new MenuItemSelectionControl();//assuming a new order is going to be created after cancel
+            FinalizationArea.Child = new OrderSummaryControl();
         }
 
         private void CompleteOrder_Click(object sender, RoutedEventArgs e)
