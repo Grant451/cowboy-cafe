@@ -16,6 +16,38 @@
     </p>
 </div>
 
+<form>
+    <input type="text" name="SearchTerms" />
+    <input type="submit" value="Search">
+</form>
+
+<ul class="menu-itemlist:">
+    @foreach (IOrderItem item in @Menu.All)
+    {
+        <li>
+            <div class="details">
+                <h3 class="menu-item">@item.ToString()</h3>
+                
+            </div>
+            <div class="ratings">
+                @if (item.ToString() != null)
+                {
+                    <div class="imdb">
+                        @item.ToString()
+                    </div>
+                }
+                @if (item.ToString() != null)
+                {
+                    <div class="rotten-tomatoes">
+                        @item.ToString()
+                    </div>
+                }
+            </div>
+        </li>
+    }
+</ul>
+
+<h2>####################</h2>
 <h2>Entrees:</h2>
 @foreach (IOrderItem x in Menu.CompleteMenu())
 {

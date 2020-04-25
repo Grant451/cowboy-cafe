@@ -8,6 +8,14 @@ namespace CowboyCafe.Data
 {
     public static class Menu
     {
+
+        static Menu()
+        {
+            All = CompleteMenu();
+        }
+
+        public static IEnumerable<IOrderItem> All;
+
         /// <summary>
         /// yeilds a list of all the entrees Ienumberable<IoderItem>
         /// </summary>
@@ -128,6 +136,34 @@ namespace CowboyCafe.Data
             temp.Add(LargeCoffee);
 
             return temp.ToArray();
+        }
+
+
+
+        /// <summary>
+        /// this function will search the entire menue for a specific item.
+        /// </summary>
+        /// <param name="terms"></param>
+        /// <returns></returns>
+        public static IEnumerable<IOrderItem> Search(string terms)
+        {
+            //I decided to follow the given uml rather than try to populate a list of all items from the constructor.
+            var temp = CompleteMenu();//all the items.
+            List<IOrderItem> complete = new List<IOrderItem>();//the finished list
+
+            if (terms == null) return CompleteMenu();//null check
+
+            foreach (IOrderItem item in temp)
+            {
+                if (item.ToString() != null && item.ToString().Contains(terms, StringComparison.InvariantCultureIgnoreCase))
+                {
+                    complete.Add(item);
+                }
+            }
+
+            //I am concerned complete could be null
+            if (complete == null) return temp;
+            else return complete;
         }
     }
 }
