@@ -106,68 +106,6 @@
     }
 }
 
-<h2>####################</h2>
-<h2>Entrees:</h2>
-@foreach (IOrderItem x in Menu.CompleteMenu())
-{
-    @if (x is Entree)
-    {
-
-
-        <ul>
-            <li>
-                <div class="menu-item">
-                    <h3>@x.ToString()</h3>
-                    Price:
-                    $
-                    @x.Price
-                    Calories:
-                    @x.Calories
-                </div>
-            </li>
-        </ul>
-    }
-}
-<h2>Sides:</h2>
-@foreach (IOrderItem x in Menu.CompleteMenu())
-{
-    @if (x is Side)
-    {
-
-
-        <ul>
-            <li>
-                <div class="menu-item">
-                    <h3>@x.ToString()</h3>
-                    Price:
-                    $
-                    @x.Price
-                    Calories:
-                    @x.Calories
-                </div>
-            </li>
-        </ul>
-    }
-}
-<h2>Drinks:</h2>
-@foreach (IOrderItem x in Menu.CompleteMenu())
-{
-    @if (x is Drink)
-    {
-        <ul>
-            <li>
-                <div class="menu-item">
-                    <h3>@x.ToString()</h3>
-                    Price:
-                    $
-                    @x.Price
-                    Calories:
-                    @x.Calories
-                </div>
-            </li>
-        </ul>
-    }
-}
 
 
 

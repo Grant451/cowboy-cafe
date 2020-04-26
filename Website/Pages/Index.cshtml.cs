@@ -90,6 +90,7 @@ namespace Website.Pages
             this.PriceMin = PriceMin;
             MenuList = Menu.FilterByPrice(MenuList, PriceMin, PriceMax);
 
+            
         }
     }
 }
