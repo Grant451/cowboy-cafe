@@ -78,7 +78,7 @@ namespace Website.Pages
         {
             SearchTerms = Request.Query["SearchTerms"];
             MenuList = Menu.Search(SearchTerms);
-
+            
             MenuItemTypes = Request.Query["Types"];
             MenuList = Menu.FilterByCategory(MenuList, MenuItemTypes);
 
