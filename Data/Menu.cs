@@ -2,6 +2,7 @@
 //allows for enumeration through the menu items 
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace CowboyCafe.Data
@@ -151,7 +152,7 @@ namespace CowboyCafe.Data
             var temp = CompleteMenu();//all the items.
             List<IOrderItem> complete = new List<IOrderItem>();//the finished list
 
-            if (terms == null) return CompleteMenu();//null check
+            if (terms == null) return temp;//null check
 
             foreach (IOrderItem item in temp)
             {
@@ -164,6 +165,108 @@ namespace CowboyCafe.Data
             //I am concerned complete could be null
             if (complete == null) return temp;
             else return complete;
+        }
+
+        /// <summary>
+        /// Gets the possible menu item types
+        /// </summary>
+        public static string[] MenuItemTypes
+        {
+            get => new string[]
+            {
+            "Entree",
+            "Side",
+            "Drink"
+            };
+        }
+
+        /// <summary>
+        /// Filter by the menu item type
+        /// </summary>
+        /// <param name="terms">terms representing the menu item types</param>
+        /// <returns></returns>
+        public static IEnumerable<IOrderItem> FilterByCategory(IEnumerable<IOrderItem> menuList, IEnumerable<string> terms)
+        {
+            List<IOrderItem> complete = new List<IOrderItem>();//the finished list
+
+            //null check:
+            if (terms == null || terms.Count() == 0) return menuList;
+            
+
+            foreach(string x in terms)
+            {
+                foreach (IOrderItem item in menuList)
+                {
+                    if(x == "Entree")
+                    {
+                        if(item is Entree)
+                        {
+                            complete.Add(item);
+                        }
+                    }
+                    else if(x == "Side")
+                    {
+                        if(item is Side)
+                        {
+                            complete.Add(item);
+                        }
+                    }
+                    else if(x == "Drink")
+                    {
+                        if(item is Drink)
+                        {
+                            complete.Add(item);
+                        }
+                    }
+                }
+
+            }
+            
+            return complete;
+        }
+
+
+        /// <summary>
+        /// filters the items by calories
+        /// </summary>
+        /// <param name="menuList">the original list</param>
+        /// <param name="min">the minimum number of calories</param>
+        /// <param name="max">the maximum number of calories</param>
+        /// <returns></returns>
+        public static IEnumerable<IOrderItem> FilterByCalories(IEnumerable<IOrderItem> menuList, int? min, int? max)
+        {
+            if (min == null && max == null) return menuList;
+
+            //if (min < 0 || max > 10000) return menuList;
+
+            List<IOrderItem> complete = new List<IOrderItem>();//the finished list
+
+            foreach(IOrderItem x in menuList)
+            {
+                if(x.Calories<max && x.Calories>min)
+                {
+                    complete.Add(x);
+                }
+            }
+            return complete;
+        }
+
+        public static IEnumerable<IOrderItem> FilterByPrice(IEnumerable<IOrderItem> menuList, double? min, double? max)
+        {
+            if (min == null && max == null) return menuList;
+
+            //if (min < 0 || max > 10000) return menuList;
+
+            List<IOrderItem> complete = new List<IOrderItem>();//the finished list
+
+            foreach (IOrderItem x in menuList)
+            {
+                if (x.Price < max && x.Price > min)
+                {
+                    complete.Add(x);
+                }
+            }
+            return complete;
         }
     }
 }
