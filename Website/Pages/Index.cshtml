@@ -21,31 +21,67 @@
     <input type="submit" value="Search">
 </form>
 
-<ul class="menu-itemlist:">
-    @foreach (IOrderItem item in @Menu.All)
+<h2>Entrees:</h2>
+@foreach (IOrderItem x in Model.MenuList)
+{
+    @if (x is Entree)
     {
-        <li>
-            <div class="details">
-                <h3 class="menu-item">@item.ToString()</h3>
-                
-            </div>
-            <div class="ratings">
-                @if (item.ToString() != null)
-                {
-                    <div class="imdb">
-                        @item.ToString()
-                    </div>
-                }
-                @if (item.ToString() != null)
-                {
-                    <div class="rotten-tomatoes">
-                        @item.ToString()
-                    </div>
-                }
-            </div>
-        </li>
+
+
+        <ul>
+            <li>
+                <div class="menu-item">
+                    <h3>@x.ToString()</h3>
+                    Price:
+                    $
+                    @x.Price
+                    Calories:
+                    @x.Calories
+                </div>
+            </li>
+        </ul>
     }
-</ul>
+}
+<h2>Sides:</h2>
+@foreach (IOrderItem x in Model.MenuList)
+{
+    @if (x is Side)
+    {
+
+
+        <ul>
+            <li>
+                <div class="menu-item">
+                    <h3>@x.ToString()</h3>
+                    Price:
+                    $
+                    @x.Price
+                    Calories:
+                    @x.Calories
+                </div>
+            </li>
+        </ul>
+    }
+}
+<h2>Drinks:</h2>
+@foreach (IOrderItem x in Model.MenuList)
+{
+    @if (x is Drink)
+    {
+        <ul>
+            <li>
+                <div class="menu-item">
+                    <h3>@x.ToString()</h3>
+                    Price:
+                    $
+                    @x.Price
+                    Calories:
+                    @x.Calories
+                </div>
+            </li>
+        </ul>
+    }
+}
 
 <h2>####################</h2>
 <h2>Entrees:</h2>
