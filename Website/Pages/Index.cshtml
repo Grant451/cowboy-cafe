@@ -23,10 +23,19 @@
     @foreach (String type in Menu.MenuItemTypes)
     {
         <label>
-            <input type="checkbox" name="Types" value="@type" checked="@Model.MenuItemTypes.Contains(type)" />
+            <input type="checkbox" name="Types" value="@type" checked="@type" />
             @type
         </label>
     }
+    <!--
+    <h4>Soda Flavors:</h4>
+    @foreach (SodaFlavor flavor in Menu.SodaFlovorItems())
+    {
+        <label>
+            <input type="checkbox" name="flavors" value="@flavor" checked="@flavor" />
+            @flavor
+        </label>
+    }-->
     <h4>Calories:</h4>
     <div>
         Between
@@ -104,6 +113,18 @@
             </li>
         </ul>
     }
+}
+
+<h2>Soda Flavors:</h2>
+@foreach(SodaFlavor x in Model.FlavorList)
+{
+    <ul>
+        <li>
+            <div class="menu-item">
+                <h3>@x.ToString()</h3>
+            </div>
+        </li>
+    </ul>
 }
 
 

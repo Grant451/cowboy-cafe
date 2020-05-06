@@ -62,6 +62,30 @@ namespace CowboyCafe.Data
             return temp.ToArray();
         }
 
+        public static IEnumerable<SodaFlavor> SodaFlovorItems()
+        {
+            var temp = new List<SodaFlavor>();
+            temp.Add(SodaFlavor.CreamSoda);
+            temp.Add(SodaFlavor.OrangeSoda);
+            temp.Add(SodaFlavor.Sarsparilla);
+            temp.Add(SodaFlavor.BirchBeer);
+            temp.Add(SodaFlavor.RootBeer);
+
+            /*
+            var CreamSoda = new JerkedSoda();
+            CreamSoda.Flavor = SodaFlavor.CreamSoda;
+            var OrangeSoda = new JerkedSoda();
+            OrangeSoda.Flavor = SodaFlavor.OrangeSoda;
+            var Sarsparilla = new JerkedSoda();
+            Sarsparilla.Flavor = SodaFlavor.Sarsparilla;
+            var BirchBeer = new JerkedSoda();
+            BirchBeer.Flavor = SodaFlavor.BirchBeer;
+            var RootBeer = new JerkedSoda();
+            RootBeer.Flavor = SodaFlavor.RootBeer;
+            */
+            return temp;
+        }
+
         /// <summary>
         /// yeilds Ienumerable list for the whole menu
         /// </summary>
@@ -114,13 +138,17 @@ namespace CowboyCafe.Data
             temp.Add(new TexasTea());
             temp.Add(MedTea);
             temp.Add(LargeTea);
+
             var MedSoda = new JerkedSoda();
             MedSoda.Size = Size.Medium;
+
             var LargeSoda = new JerkedSoda();
             LargeSoda.Size = Size.Large;
+
             temp.Add(new JerkedSoda());
             temp.Add(MedSoda);
             temp.Add(LargeSoda);
+
             var MedWater = new Water();
             MedWater.Size = Size.Medium;
             var LargeWater = new Water();
