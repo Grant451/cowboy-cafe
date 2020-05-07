@@ -76,3 +76,28 @@ ul.menu-item h3 {
 }
     */
 
+/*
+flexcontainer {
+    display: flex;
+    flex-direction: row;
+}
+
+@media (max-width: 490px) {
+    .flexcontainer {
+        flex-direction: column;
+    }
+}*/
+
+.clearfix {
+    clear: both;
+}
+
+@media (max-width: 490px) {
+    /* Reset the columns to render with the flow of the page */
+    .float-columns > div {
+        float: none;
+        width: 100%;
+    }
+}
+
+

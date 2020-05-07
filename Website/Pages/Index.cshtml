@@ -52,82 +52,95 @@
     </div>
 
 </form>
-
-<h2>Entrees:</h2>
-@foreach (IOrderItem x in Model.MenuList)
-{
-    @if (x is Entree)
-    {
-
-
-        <ul>
-            <li>
-                <div class="menu-item">
-                    <h3>@x.ToString()</h3>
-                    Price:
-                    $
-                    @x.Price
-                    Calories:
-                    @x.Calories
-                </div>
-            </li>
-        </ul>
-    }
-}
-<h2>Sides:</h2>
-@foreach (IOrderItem x in Model.MenuList)
-{
-    @if (x is Side)
-    {
+<!--
+<div class="float-columns">
+    <div class="boxa">a</div>
+    <div class="boxb">B</div>
+    <div class="boxc">C</div>
+    </div>
+    -->
+<div class="clearfix"></div>
+    <div class="float-columns">
+        <div class="box1">
+            <h2>Entrees:</h2>
+            @foreach (IOrderItem x in Model.MenuList)
+            {
+                @if (x is Entree)
+                {
 
 
-        <ul>
-            <li>
-                <div class="menu-item">
-                    <h3>@x.ToString()</h3>
-                    Price:
-                    $
-                    @x.Price
-                    Calories:
-                    @x.Calories
-                </div>
-            </li>
-        </ul>
-    }
-}
-<h2>Drinks:</h2>
-@foreach (IOrderItem x in Model.MenuList)
-{
-    @if (x is Drink)
-    {
-        <ul>
-            <li>
-                <div class="menu-item">
-                    <h3>@x.ToString()</h3>
-                    Price:
-                    $
-                    @x.Price
-                    Calories:
-                    @x.Calories
-                </div>
-            </li>
-        </ul>
-    }
-}
-
-<h2>Soda Flavors:</h2>
-@foreach(SodaFlavor x in Model.FlavorList)
-{
-    <ul>
-        <li>
-            <div class="menu-item">
-                <h3>@x.ToString()</h3>
-            </div>
-        </li>
-    </ul>
-}
+                    <ul>
+                        <li>
+                            <div class="menu-item">
+                                <h3>@x.ToString()</h3>
+                                Price:
+                                $
+                                @x.Price
+                                Calories:
+                                @x.Calories
+                            </div>
+                        </li>
+                    </ul>
+                }
+            }
+        </div>
+        <div class="box2">
+            <h2>Sides:</h2>
+            @foreach (IOrderItem x in Model.MenuList)
+            {
+                @if (x is Side)
+                {
 
 
+                    <ul>
+                        <li>
+                            <div class="menu-item">
+                                <h3>@x.ToString()</h3>
+                                Price:
+                                $
+                                @x.Price
+                                Calories:
+                                @x.Calories
+                            </div>
+                        </li>
+                    </ul>
+                }
+            }
+        </div>
+        <div class="box3">
+            <h2>Drinks:</h2>
+            @foreach (IOrderItem x in Model.MenuList)
+            {
+                @if (x is Drink)
+                {
+                    <ul>
+                        <li>
+                            <div class="menu-item">
+                                <h3>@x.ToString()</h3>
+                                Price:
+                                $
+                                @x.Price
+                                Calories:
+                                @x.Calories
+                            </div>
+                        </li>
+                    </ul>
+                }
+            }
+            <h2>Soda Flavors:</h2>
+            @foreach (SodaFlavor x in Model.FlavorList)
+            {
+                <ul>
+                    <li>
+                        <div class="menu-item">
+                            <h3>@x.ToString()</h3>
+                        </div>
+                    </li>
+                </ul>
+            }
+        </div>
+    </div>
+    <div class="clearfix"></div>
 
 
 
